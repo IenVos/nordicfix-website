@@ -304,8 +304,20 @@ body {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
+}
+
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .service-card {
@@ -384,6 +396,30 @@ body {
 
 .service-link:hover {
     gap: 12px;
+}
+
+/* ====================================
+   Service Card Highlight
+   ==================================== */
+.service-card-highlight {
+    background: linear-gradient(135deg, rgba(243, 156, 90, 0.15), rgba(110, 181, 209, 0.15));
+    border-color: rgba(243, 156, 90, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card-highlight:before {
+    background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
+}
+
+.service-card-highlight .service-icon {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 /* ====================================
