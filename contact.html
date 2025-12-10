@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Neem contact op met NordicFix voor professionele digitale diensten. Bereikbaar via email en contactformulier.">
+    <title>Contact - NordicFix</title>
+    <link rel="icon" type="image/png" href="images/nordicfix_favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .contact-page {
+            padding-top: 140px;
+            padding-bottom: 120px;
+        }
+
+        .contact-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+
+        .contact-header h1 {
+            font-size: clamp(40px, 6vw, 64px);
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--color-white), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-header p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: rgba(30, 58, 79, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(110, 181, 209, 0.2);
+            border-radius: 16px;
+            padding: 48px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--color-white);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(15, 30, 41, 0.6);
+            border: 1px solid rgba(110, 181, 209, 0.3);
+            border-radius: 8px;
+            color: var(--color-white);
+            font-family: var(--font-primary);
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-secondary);
+            background: rgba(15, 30, 41, 0.8);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--color-accent), #e88b47);
+            border: none;
+            border-radius: 10px;
+            color: var(--color-white);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(243, 156, 90, 0.4);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .info-card {
+            background: rgba(30, 58, 79, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(110, 181, 209, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .info-card h3 {
+            font-size: 22px;
+            margin-bottom: 16px;
+            color: var(--color-secondary);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--color-accent);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .info-text {
+            flex: 1;
+        }
+
+        .info-text strong {
+            display: block;
+            color: var(--color-white);
+            margin-bottom: 4px;
+        }
+
+        .info-text p {
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        .info-text a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-text a:hover {
+            color: var(--color-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-form {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Aurora Background -->
+    <div class="aurora-background">
+        <div class="aurora-layer aurora-1"></div>
+        <div class="aurora-layer aurora-2"></div>
+        <div class="aurora-layer aurora-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <img src="images/nordicfix_logo.png" alt="NordicFix Logo">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="diensten.html">Diensten</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="over.html">Over</a></li>
+                    <li><a href="contact.html" class="cta-button active">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Page -->
+    <section class="contact-page">
+        <div class="container">
+            <div class="contact-header">
+                <h1>Neem Contact Op</h1>
+                <p>
+                    Interesse in mijn diensten of heb je een vraag? Ik help je graag verder. 
+                    Stuur een bericht en ik neem binnen 24 uur contact met je op.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Naam *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Bedrijf</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Interesse in dienst</label>
+                            <select id="service" name="service">
+                                <option value="">Selecteer een dienst</option>
+                                <option value="customer-service">Customer Service</option>
+                                <option value="website-development">Website Development</option>
+                                <option value="seo">SEO Optimalisatie</option>
+                                <option value="tool-integraties">Tool Integraties</option>
+                                <option value="anders">Anders</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Bericht *</label>
+                            <textarea id="message" name="message" required placeholder="Vertel me over je project of vraag..."></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">Verstuur Bericht</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>Direct Contact</h3>
+                        
+                        <div class="info-item">
+                            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <div class="info-text">
+                                <strong>Email</strong>
+                                <p><a href="mailto:info@nordicfix.nl">info@nordicfix.nl</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <div class="info-text">
+                                <strong>Responstijd</strong>
+                                <p>Binnen 24 uur op werkdagen</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Bereikbaarheid</h3>
+                        
+                        <div class="info-item">
+                            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                            <div class="info-text">
+                                <strong>Beschikbaar</strong>
+                                <p>Maandag - Vrijdag<br>9:00 - 17:00 CET</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <div class="info-text">
+                                <strong>Locatie</strong>
+                                <p>Zweden (Stockholm)</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                            <div class="info-text">
+                                <strong>Talen</strong>
+                                <p>Nederlands & Engels</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Wat te verwachten</h3>
+                        <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.7; margin: 0;">
+                            Na het versturen van je bericht ontvang je binnen 24 uur een reactie. 
+                            We plannen dan een kennismakingsgesprek in waarin we je project bespreken 
+                            en kijken hoe ik je het beste kan helpen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <img src="images/nordicfix_logo.png" alt="NordicFix" class="footer-logo">
+                    <p>Professionele digitale diensten voor online businesses.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Navigatie</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="diensten.html">Diensten</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="over.html">Over</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Diensten</h4>
+                    <ul>
+                        <li><a href="diensten/customer-service.html">Customer Service</a></li>
+                        <li><a href="diensten/website-development.html">Website Development</a></li>
+                        <li><a href="diensten/seo-optimalisatie.html">SEO Optimalisatie</a></li>
+                        <li><a href="diensten/tool-integraties.html">Tool Integraties</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@nordicfix.nl">info@nordicfix.nl</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NordicFix. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Basic form handling (vervang dit later met echte form submission)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Formulier functionaliteit moet nog geïmplementeerd worden met een backend service zoals Formspree, Netlify Forms, of een eigen API.');
+            // TODO: Implementeer form submission met Formspree, Netlify Forms, of eigen backend
+        });
+    </script>
+</body>
+</html>
