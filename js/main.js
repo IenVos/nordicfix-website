@@ -31,10 +31,10 @@ window.addEventListener('scroll', function() {
     const nav = document.querySelector('.main-nav');
     
     if (window.scrollY > 100) {
-        nav.style.background = 'rgba(15, 30, 41, 0.85)';
-        nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.4)';
+        nav.style.background = 'rgba(15, 30, 41, 0.6)';
+        nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
     } else {
-        nav.style.background = 'rgba(15, 30, 41, 0.4)';
+        nav.style.background = 'transparent';
         nav.style.boxShadow = 'none';
     }
 });
