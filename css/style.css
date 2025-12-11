@@ -222,14 +222,14 @@ body {
 }
 
 .hero-logo img {
-    height: 200px;
+    height: 150px;
     width: auto;
 }
 
 .hero {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: left;
     padding-top: 40px;
     position: relative;
 }
