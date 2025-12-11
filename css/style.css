@@ -118,21 +118,22 @@ body {
 }
 
 .nav-content {
+    .nav-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 30px 0;
 }
 
 .logo {
-    display: none;
+    display: block;
+    margin-right: auto;
 }
 
 .logo img {
-    height: 120px;
+    height: 150px;  /* Pas aan naar wens: 60px, 100px, etc. */
     width: auto;
     transition: transform 0.3s ease;
-    align-self: flex-end;
 }
 
 @media (max-width: 768px) {
@@ -146,10 +147,13 @@ body {
 }
 
 .nav-links {
+    .nav-links {
     display: flex;
     list-style: none;
     gap: 40px;
     align-items: center;
+    margin-left: auto;
+    padding-right: 10%;
 }
 
 .nav-links a {
