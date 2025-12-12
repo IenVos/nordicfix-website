@@ -485,32 +485,10 @@ section {
 /* ====================================
    USP Section
    ==================================== */
-:root {
-    --section-padding: 60px; /* Zorg dat deze variabele goed is ingesteld */
-}
-
 .usp-section {
     padding: var(--section-padding) 0;
 }
 
-.usp-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 48px; /* Ruimere afstand tussen de grid-items */
-}
-
-.usp-item {
-    text-align: center;
-    padding: 32px;
-    margin-bottom: 32px; /* Extra ruimte onder elk item */
-    background: rgba(30, 58, 79, 0.6);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(110, 181, 209, 0.15);
-    border-radius: 16px;
-    transition: all 0.3s ease;
-}
-
-/* De rest van je CSS kun je laten zoals die was */
 .usp-content h2 {
     font-size: clamp(32px, 5vw, 48px);
     font-weight: 700;
@@ -520,6 +498,22 @@ section {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.usp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.usp-item {
+    text-align: center;
+    padding: 32px;
+    background: rgba(30, 58, 79, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(110, 181, 209, 0.15);
+    border-radius: 16px;
+    transition: all 0.3s ease;
 }
 
 .usp-item:hover {
@@ -550,8 +544,6 @@ section {
     color: var(--color-text-muted);
     line-height: 1.6;
 }
-
-
 /* ====================================
    CTA Section
    ==================================== */
