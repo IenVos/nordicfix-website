@@ -414,13 +414,13 @@ section {
 .reviews-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 32px 24px;
 }
 
 .review-card {
     background: rgba(30, 58, 79, 0.5);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(110, 181, 209, 0.2);
+    border: 2px solid rgba(243, 156, 90, 0.4);
     border-radius: 16px;
     padding: 28px;
     position: relative;
@@ -562,10 +562,6 @@ section {
     max-width: 700px;
     margin: 0 auto;
     padding: 60px 40px;
-    background: rgba(30, 58, 79, 0.4);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(110, 181, 209, 0.2);
-    border-radius: 20px;
 }
 
 .cta-content h2 {
