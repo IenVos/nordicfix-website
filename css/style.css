@@ -591,6 +591,7 @@ section {
 .footer-logo {
     height: 100px;
     width: auto;
+    position: relative; left: 10Xpx;
     margin-bottom: 16px;
 }
 
