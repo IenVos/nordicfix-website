@@ -1042,3 +1042,26 @@ section {
         text-align: center;
     }
 }
+/* ====================================
+   Page Hero (voor services, blog, over)
+   ==================================== */
+.page-hero {
+    padding: 120px 0 60px;
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: clamp(42px, 6vw, 64px);
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--color-white), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.services-overview {
+    padding: var(--section-padding) 0;
+}
+
+/* Contact formulier styling - zie style-fixed.css voor volledige code */
