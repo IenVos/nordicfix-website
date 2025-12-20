@@ -747,7 +747,8 @@ section {
 .form-group select {
     width: 100%;
     padding: 14px 18px;
-    background: rgba(10, 21, 32, 0.5);
+    background:#6eb5d1;(30, 58, 79, 0.6);
+        /* Lichter blauw */;
     border: 1px solid rgba(110, 181, 209, 0.3);
     border-radius: 8px;
     color: var(--color-white);
