@@ -187,8 +187,9 @@ body {
 }
 
 .hero-logo img {
-    height: 300px;
+    max-width: 60%;
     width: auto;
+    height: auto;
 }
 
 .hero-title {
