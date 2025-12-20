@@ -18,58 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-});
 
-// ====================================
-// Smooth Scroll for Anchor Links
-// ====================================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== '#' && document.querySelector(href)) {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            const offsetTop = target.offsetTop - 90;
-
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// ====================================
-// Intersection Observer for Animations
-// ====================================
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function (entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
-
-/// Observe all animated elements
-document.addEventListener('DOMContentLoaded', function () {
-    // Alleen extra service cards animeren
-    const extraServiceCards = document.querySelectorAll('.extra-service-card');
-    extraServiceCards.forEach(item => observer.observe(item));
-});
-
-// ====================================
-// Active Navigation Link
-// ====================================
-function setActiveNavLink() {
+    // Active navigation link
     const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('.nav-links a:not(.cta-button)');
+    const navLinksAll = document.querySelectorAll('.nav-links a:not(.cta-button)');
 
-    navLinks.forEach(link => {
+    navLinksAll.forEach(link => {
         link.classList.remove('active');
         const linkPath = new URL(link.href).pathname;
 
@@ -78,6 +32,21 @@ function setActiveNavLink() {
             link.classList.add('active');
         }
     });
-}
 
-document.addEventListener('DOMContentLoaded', setActiveNavLink);
+    // Scroll animatie voor extra-service-cards
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    const extraServiceCards = document.querySelectorAll('.extra-service-card');
+    extraServiceCards.forEach(item => observer.observe(item));
+});
