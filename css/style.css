@@ -775,8 +775,9 @@ section {
 }
 
 .form-group select option {
-    background: #1e3a4f;
-    color: var(--color-text);
+    background: #0a1520 !important;
+        background-color: #0a1520 !important;
+        color: var(--color-text) !important;
 }
 
 .form-group input:focus,
@@ -974,7 +975,7 @@ section {
 
 .stat-label {
     font-size: 13px;
-    /* Voeg toe */
+
     line-height: 1.4;
 }
 
@@ -1105,10 +1106,7 @@ section {
         text-align: center;
     }
 }
-/* ====================================
-   AANVULLINGEN VOOR SERVICES & DIENSTEN PAGINA'S
-   Plak deze code onderaan je bestaande style.css
-   ==================================== */
+
 
 /* Extra Services - Compact Cards */
 .extra-services {
