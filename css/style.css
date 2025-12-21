@@ -1625,7 +1625,7 @@ body {
     transform: translateY(0);
 }
 
-/* Fade-in animatie bij scrollen */
+/* Extra service cards scroll animatie */
 .extra-service-card {
     opacity: 0;
     transform: translateY(30px);
