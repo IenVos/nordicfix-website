@@ -1163,6 +1163,7 @@ Contact, Blog, Over Pages
 }
 
 /* Blog */
+/* Blog */
 .blog-section {
     padding: var(--section-padding) 0;
 }
@@ -1233,6 +1234,21 @@ Contact, Blog, Over Pages
 .blog-card .read-more:hover {
     gap: 12px;
 }
+/* Mobile */
+@media (max-width: 768px) {
+    .blog-wrapper {
+        padding: 30px 20px;
+    }
+
+    .blog-wrapper h1 {
+        font-size: 32px;
+    }
+
+    .blog-hero img {
+        height: 250px;
+    }
+}
+
 
 /* Over */
 .over-content {

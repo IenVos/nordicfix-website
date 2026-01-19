@@ -1,6 +1,6 @@
 /**
  * NordicFix AI Chatbot Widget
- * Met booking formulier en werkende Flatpickr kalender
+ * Met EmailJS notificaties voor bookings
  */
 
 (function () {
@@ -12,6 +12,13 @@
         greeting: 'Hallo! 👋 Ik ben de digitale assistent van NordicFix. Hoe kan ik je helpen?',
         placeholder: 'Stel je vraag...',
         title: 'NordicFix Assistent',
+
+        // EmailJS configuratie
+        emailjs: {
+            serviceId: 'service_98ygxh9',      // Vervang met jouw EmailJS service ID
+            templateId: 'Ytemplate_lyl8f7s',    // Vervang met jouw EmailJS template ID
+            publicKey: '258KhsfM1eT5J8O3j'       // Vervang met jouw EmailJS public key
+        },
 
         colors: {
             primary: '#f39c5a',
@@ -31,6 +38,7 @@
         }
     };
 
+    // [Alle CSS styles blijven hetzelfde - kopieer van origineel bestand]
     const styles = `
         #nf-chat-widget {
             --nf-primary: ${CONFIG.colors.primary};
@@ -476,7 +484,6 @@
             color: #666;
         }
 
-        /* KRITIEKE FLATPICKR OVERRIDES */
         .flatpickr-calendar {
             z-index: 2100000 !important;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
@@ -488,7 +495,6 @@
             opacity: 1 !important;
         }
 
-        /* Zorg dat input klikbaar is */
         #nf-date-picker {
             cursor: pointer !important;
             background-color: white !important;
@@ -555,7 +561,30 @@
             this.isLoading = false;
             this.history = [];
             this.flatpickrInstance = null;
+            this.emailjsLoaded = false;
             this.init();
+            this.loadEmailJS();
+        }
+
+        loadEmailJS() {
+            if (typeof emailjs !== 'undefined') {
+                this.emailjsLoaded = true;
+                emailjs.init(CONFIG.emailjs.publicKey);
+                console.log('✅ EmailJS already loaded');
+                return;
+            }
+
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+            script.onload = () => {
+                emailjs.init(CONFIG.emailjs.publicKey);
+                this.emailjsLoaded = true;
+                console.log('✅ EmailJS loaded');
+            };
+            script.onerror = () => {
+                console.error('❌ Failed to load EmailJS');
+            };
+            document.head.appendChild(script);
         }
 
         init() {
@@ -711,7 +740,6 @@
         }
 
         openBooking() {
-            // Destroy vorige instance als die bestaat
             if (this.flatpickrInstance) {
                 this.flatpickrInstance.destroy();
                 this.flatpickrInstance = null;
@@ -768,17 +796,14 @@
                 </div>
             `;
 
-            // Toon overlay
             this.bookingOverlay.classList.add('active');
 
-            // Wacht tot DOM volledig gerenderd is
             requestAnimationFrame(() => {
                 setTimeout(() => {
                     this.initFlatpickr();
                 }, 100);
             });
 
-            // Form submit handler
             const form = document.getElementById('nf-booking-form');
             if (form) {
                 form.addEventListener('submit', (e) => this.handleBookingSubmit(e));
@@ -796,7 +821,6 @@
 
             if (typeof flatpickr === 'undefined') {
                 console.error('❌ Flatpickr library niet geladen');
-                // Fallback: maak het een gewone date input
                 datePicker.type = 'date';
                 datePicker.removeAttribute('readonly');
                 datePicker.addEventListener('change', () => {
@@ -838,23 +862,56 @@
             } catch (error) {
                 console.error('❌ Flatpickr init error:', error);
             }
+        }
 
-            ccloseBooking()
-                // Destroy flatpickr instance als die bestaat
-                if (this.flatpickrInstance) {
-                    try {
-                        this.flatpickrInstance.destroy();
-                    } catch (e) {
-                        // Ignore errors
-                    }
-                    this.flatpickrInstance = null;
+        closeBooking() {
+            if (this.flatpickrInstance) {
+                try {
+                    this.flatpickrInstance.destroy();
+                } catch (e) {
+                    // Ignore errors
                 }
-
-                this.bookingOverlay.classList.remove('active');
-                setTimeout(() => {
-                    this.bookingContent.innerHTML = '';
-                }, 300);
+                this.flatpickrInstance = null;
             }
+
+            this.bookingOverlay.classList.remove('active');
+            setTimeout(() => {
+                this.bookingContent.innerHTML = '';
+            }, 300);
+        }
+
+        async sendEmailNotification(bookingData) {
+            if (!this.emailjsLoaded) {
+                console.error('❌ EmailJS not loaded');
+                return false;
+            }
+
+            try {
+                const templateParams = {
+                    to_name: 'NordicFix Team',
+                    from_name: bookingData.name,
+                    from_email: bookingData.email,
+                    phone: bookingData.phone || 'Niet opgegeven',
+                    date: bookingData.date,
+                    time: bookingData.time,
+                    notes: bookingData.notes || 'Geen aanvullende notities',
+                    reply_to: bookingData.email
+                };
+
+                await emailjs.send(
+                    CONFIG.emailjs.serviceId,
+                    CONFIG.emailjs.templateId,
+                    templateParams
+                );
+
+                console.log('✅ Email notification sent');
+                return true;
+
+            } catch (error) {
+                console.error('❌ EmailJS error:', error);
+                return false;
+            }
+        }
 
         async handleBookingSubmit(e) {
             e.preventDefault();
@@ -875,37 +932,26 @@
             submitBtn.disabled = true;
             submitBtn.textContent = 'Bezig met verzenden...';
 
-            try {
-                const response = await fetch(CONFIG.apiEndpoint + '/booking', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(bookingData)
-                });
+            // Verstuur email notificatie
+            const emailSent = await this.sendEmailNotification(bookingData);
 
-                if (response.ok) {
-                    form.style.display = 'none';
+            if (emailSent) {
+                form.style.display = 'none';
 
-                    // Verander de titel
-                    const formContainer = document.querySelector('.nf-booking-form');
-                    const title = formContainer.querySelector('h2');
-                    const subtitle = formContainer.querySelector('p');
-                    if (title) title.textContent = '';
-                    if (subtitle) subtitle.style.display = 'none';
+                const formContainer = document.querySelector('.nf-booking-form');
+                const title = formContainer.querySelector('h2');
+                const subtitle = formContainer.querySelector('p');
+                if (title) title.textContent = '';
+                if (subtitle) subtitle.style.display = 'none';
 
-                    document.getElementById('nf-booking-success').style.display = 'block';
+                document.getElementById('nf-booking-success').style.display = 'block';
 
-                    setTimeout(() => {
-                        this.closeBooking();
-                    }, 3000);
+                setTimeout(() => {
+                    this.closeBooking();
+                }, 3000);
 
-                } else {
-                    alert('Er ging iets mis. Probeer het opnieuw of mail naar hello@nordicfix.nl');
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Afspraak aanvragen';
-                }
-            } catch (error) {
-                console.error('Booking error:', error);
-                alert('Fout bij verzenden. Neem contact op via hello@nordicfix.nl');
+            } else {
+                alert('Er ging iets mis bij het verzenden. Probeer het opnieuw of mail naar hello@nordicfix.nl');
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Afspraak aanvragen';
             }
