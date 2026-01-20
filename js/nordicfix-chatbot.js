@@ -16,7 +16,7 @@
         // EmailJS configuratie
         emailjs: {
             serviceId: 'service_98ygxh9',      // Vervang met jouw EmailJS service ID
-            templateId: 'Ytemplate_lyl8f7s',    // Vervang met jouw EmailJS template ID
+            templateId: 'template_lyl8f7s',    // Vervang met jouw EmailJS template ID
             publicKey: '258KhsfM1eT5J8O3j'       // Vervang met jouw EmailJS public key
         },
 
