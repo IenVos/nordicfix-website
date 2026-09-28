@@ -570,7 +570,6 @@
             if (typeof emailjs !== 'undefined') {
                 this.emailjsLoaded = true;
                 emailjs.init(CONFIG.emailjs.publicKey);
-                console.log('✅ EmailJS already loaded');
                 return;
             }
 
@@ -579,7 +578,6 @@
             script.onload = () => {
                 emailjs.init(CONFIG.emailjs.publicKey);
                 this.emailjsLoaded = true;
-                console.log('✅ EmailJS loaded');
             };
             script.onerror = () => {
                 console.error('❌ Failed to load EmailJS');
@@ -625,7 +623,6 @@
                 if (e.target === this.bookingOverlay) this.closeBooking();
             });
 
-            console.log('✅ NordicFix Chatbot initialized');
         }
 
         toggleChat() {
@@ -857,7 +854,6 @@
                     }
                 });
 
-                console.log('✅ Flatpickr initialized');
 
             } catch (error) {
                 console.error('❌ Flatpickr init error:', error);
@@ -904,7 +900,6 @@
                     templateParams
                 );
 
-                console.log('✅ Email notification sent');
                 return true;
 
             } catch (error) {
