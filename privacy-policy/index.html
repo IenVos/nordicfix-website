@@ -333,10 +333,15 @@
         </main>
 
         <footer class="footer">
-            <p>&copy; 2025 NordicFix. Alle rechten voorbehouden.</p>
+            <p>&copy; 2020 - <span class="current-year">2026</span> NordicFix. Alle rechten voorbehouden.</p>
             <p><a href="https://nordicfix.nl">Terug naar de website</a></p>
         </footer>
     </div>
+    <script>
+        document.querySelectorAll('.current-year').forEach((el) => {
+            el.textContent = new Date().getFullYear();
+        });
+    </script>
 </body>
 
 </html>

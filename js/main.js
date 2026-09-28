@@ -224,3 +224,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
+// Vul het huidige jaar in het copyright-jaartal (loopt automatisch mee)
+document.addEventListener('DOMContentLoaded', () => {
+    const year = new Date().getFullYear();
+    document.querySelectorAll('.current-year').forEach((el) => {
+        el.textContent = year;
+    });
+});
