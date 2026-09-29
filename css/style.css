@@ -280,18 +280,14 @@ Hero Section
 /* Ronde profielfoto in de hero (over-pagina) - "maan"-look zoals het logo:
    lichte rand -> blauwe ring -> zachte lichtgloed -> diepteschaduw */
 .hero-logo img.hero-photo {
-    display: block;
-    width: min(500px, 60%);
-    height: auto;
-    aspect-ratio: 1 / 1;
-    max-width: none;
+    box-sizing: border-box;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
-    border: none;
+    /* lichte rand als border -> zit tegen de foto aan, dus geen witte kier */
+    border: 3px solid rgba(235, 244, 255, 0.90);
     box-shadow:
-        0 0 0 3px rgba(235, 244, 255, 0.85),
-        0 0 0 7px rgba(120, 170, 200, 0.50),
+        0 0 0 4px rgba(120, 170, 200, 0.55),
         0 0 45px 10px rgba(150, 195, 235, 0.45),
         0 14px 45px rgba(0, 0, 0, 0.50);
 }
