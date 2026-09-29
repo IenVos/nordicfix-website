@@ -155,6 +155,17 @@ Aurora Background
     user-select: none;
 }
 
+/* Donkere waas over de achtergrondvideo:
+   maakt het rustiger/minder nadrukkelijk en verbergt subtiele artefacten */
+.video-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 17, 27, 0.5);
+    pointer-events: none;
+    z-index: 1;
+}
+
 /* ====================================
 Navigation
 ==================================== */
