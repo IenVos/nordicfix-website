@@ -142,6 +142,152 @@
         </div>
     </section>
 
+    <!-- Zie het in actie (animatie-demo) -->
+    <section class="services-overview" style="padding-top: 60px;">
+        <div class="container">
+            <h2 class="section-title">Zie het in actie</h2>
+            <p style="text-align: center; max-width: 620px; margin: 0 auto 40px; line-height: 1.7; opacity: 0.9;">
+                Zo ziet het eruit voor je bezoeker: in een paar seconden van een vraag naar een persoonlijke mail.
+            </p>
+
+            <style>
+                .lmd-wrap { max-width: 540px; margin: 0 auto; }
+                .lmd-frame {
+                    background: rgba(20, 34, 49, 0.88);
+                    border: 1px solid rgba(110, 181, 209, 0.2);
+                    border-radius: 18px;
+                    overflow: hidden;
+                    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+                    backdrop-filter: blur(10px);
+                }
+                .lmd-bar { display: flex; align-items: center; gap: 7px; padding: 13px 16px; background: rgba(12, 22, 32, 0.7); border-bottom: 1px solid rgba(110, 181, 209, 0.12); }
+                .lmd-bar i { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+                .lmd-url { margin-left: 12px; font-size: 12px; color: rgba(255, 255, 255, 0.45); font-family: 'Space Mono', monospace; }
+                .lmd-screen { position: relative; padding: 30px 28px; min-height: 270px; }
+                .lmd-state { position: absolute; inset: 30px 28px; opacity: 0; transform: translateY(12px); transition: opacity .45s ease, transform .45s ease; pointer-events: none; }
+                .lmd-state.on { opacity: 1; transform: none; }
+                .lmd-tag { display: inline-block; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--color-secondary); font-weight: 700; margin-bottom: 14px; }
+                .lmd-q { font-size: 1.25rem; font-weight: 700; color: #fff; line-height: 1.35; margin-bottom: 18px; }
+                .lmd-field { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(110, 181, 209, 0.25); border-radius: 10px; padding: 14px 16px; min-height: 54px; color: #eaf2f8; font-size: 1rem; line-height: 1.5; }
+                .lmd-field.email { font-family: 'Space Mono', monospace; }
+                .lmd-caret { display: inline-block; width: 2px; height: 1.05em; background: var(--color-accent); margin-left: 2px; vertical-align: -2px; animation: lmd-blink 1s steps(1) infinite; }
+                @keyframes lmd-blink { 50% { opacity: 0; } }
+                .lmd-btn { margin-top: 18px; display: inline-block; background: var(--color-accent); color: #fff; font-weight: 700; padding: 12px 26px; border-radius: 10px; transition: transform .15s ease, box-shadow .15s ease; }
+                .lmd-btn.press { transform: scale(.94); box-shadow: 0 0 0 5px rgba(243, 156, 90, 0.25); }
+                .lmd-success { text-align: center; }
+                .lmd-check { width: 58px; height: 58px; border-radius: 50%; background: rgba(0, 191, 165, 0.15); border: 2px solid #00BFA5; color: #00BFA5; font-size: 30px; display: flex; align-items: center; justify-content: center; margin: 4px auto 18px; }
+                .lmd-success h4 { font-size: 1.3rem; color: #fff; margin-bottom: 8px; }
+                .lmd-success p { color: rgba(255, 255, 255, 0.7); line-height: 1.6; }
+                .lmd-mail { display: flex; gap: 14px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(110, 181, 209, 0.2); border-radius: 12px; padding: 16px; }
+                .lmd-ava { width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; background: linear-gradient(135deg, var(--color-secondary), var(--color-accent)); }
+                .lmd-from { font-weight: 700; color: #fff; font-size: .95rem; }
+                .lmd-subj { color: rgba(255, 255, 255, 0.55); font-size: .82rem; margin-top: 2px; }
+                .lmd-mailbody { color: rgba(234, 242, 248, 0.85); font-size: .9rem; line-height: 1.55; margin-top: 10px; }
+            </style>
+
+            <div class="lmd-wrap">
+                <div class="lmd-frame" id="lmd">
+                    <div class="lmd-bar">
+                        <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
+                        <span class="lmd-url">jouwwebsite.nl</span>
+                    </div>
+                    <div class="lmd-screen">
+                        <!-- Vraag -->
+                        <div class="lmd-state" data-s="q">
+                            <span class="lmd-tag">Vraag 1 van 3</span>
+                            <div class="lmd-q">Waar loop je tegenaan op je website?</div>
+                            <div class="lmd-field"><span data-type="answer"></span><span class="lmd-caret"></span></div>
+                        </div>
+                        <!-- E-mail -->
+                        <div class="lmd-state" data-s="email">
+                            <span class="lmd-tag">Bijna klaar</span>
+                            <div class="lmd-q">Waar mag ik mijn persoonlijke reactie naartoe sturen?</div>
+                            <div class="lmd-field email"><span data-type="email"></span><span class="lmd-caret"></span></div>
+                            <span class="lmd-btn" data-btn>Versturen</span>
+                        </div>
+                        <!-- Gelukt -->
+                        <div class="lmd-state lmd-success" data-s="done">
+                            <div class="lmd-check">✓</div>
+                            <h4>Dankjewel!</h4>
+                            <p>Je ontvangt zo een persoonlijk bericht van me.</p>
+                        </div>
+                        <!-- Mail terug -->
+                        <div class="lmd-state" data-s="mail">
+                            <span class="lmd-tag">Nieuwe mail</span>
+                            <div class="lmd-mail">
+                                <div class="lmd-ava">I</div>
+                                <div>
+                                    <div class="lmd-from">Ien — NordicFix</div>
+                                    <div class="lmd-subj">Een idee voor meer aanvragen</div>
+                                    <div class="lmd-mailbody">Hoi Anna, ik zag dat je wél bezoekers krijgt, maar weinig
+                                        aanvragen. Dit zou ik als eerste aanpassen op je site…</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            var root = document.getElementById('lmd');
+            if (!root) return;
+            var states = {};
+            root.querySelectorAll('.lmd-state').forEach(function (el) { states[el.dataset.s] = el; });
+            var answerEl = root.querySelector('[data-type="answer"]');
+            var emailEl = root.querySelector('[data-type="email"]');
+            var btn = root.querySelector('[data-btn]');
+            var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            var ANSWER = 'Ik krijg wel bezoekers, maar weinig aanvragen.';
+            var EMAIL = 'anna@bloomstudio.nl';
+
+            function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+            function show(name) {
+                Object.keys(states).forEach(function (k) { states[k].classList.toggle('on', k === name); });
+            }
+            async function type(el, text, speed) {
+                el.textContent = '';
+                if (reduce) { el.textContent = text; return; }
+                for (var i = 0; i < text.length; i++) {
+                    el.textContent += text[i];
+                    await sleep(speed);
+                }
+            }
+
+            async function loop() {
+                while (true) {
+                    // Vraag + antwoord
+                    answerEl.textContent = '';
+                    show('q');
+                    await sleep(700);
+                    await type(answerEl, ANSWER, 38);
+                    await sleep(900);
+                    // E-mail
+                    emailEl.textContent = '';
+                    btn.classList.remove('press');
+                    show('email');
+                    await sleep(600);
+                    await type(emailEl, EMAIL, 55);
+                    await sleep(700);
+                    btn.classList.add('press');
+                    await sleep(260);
+                    btn.classList.remove('press');
+                    await sleep(200);
+                    // Gelukt
+                    show('done');
+                    await sleep(1600);
+                    // Mail terug
+                    show('mail');
+                    await sleep(3200);
+                }
+            }
+            loop();
+        })();
+    </script>
+
     <!-- Wat je krijgt / features -->
     <section class="services-overview" style="padding-top: 60px;">
         <div class="container">
