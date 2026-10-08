@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Vraag LeadMaat aan. Laat je e-mailadres en website achter, dan help ik je persoonlijk verder.">
+    <title>LeadMaat aanvragen - NordicFix</title>
+    <link rel="icon" type="image/png" href="/images/nordicfix_favicon.png">
+    <link rel="stylesheet" href="/css/style.css?v=8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video poster="/images/video-poster.jpg" autoplay muted loop playsinline webkit-playsinline preload="metadata">
+            <source src="/videos/noorderlicht.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Navigation (alleen logo) -->
+    <nav class="main-nav nav-logo-only">
+        <div class="container">
+            <div class="nav-content">
+                <a href="/" class="nav-logo"><img src="/images/Nordicfix.logo_.png" alt="NordicFix - terug naar home"></a>
+                <ul class="nav-links">
+                    <li><a href="/services/">Services</a></li>
+                    <li><a href="/tools/">Handige tools</a></li>
+                    <li><a href="/over/">Over</a></li>
+                    <li><a href="/contact/" class="cta-button">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Aanvraag -->
+    <section class="hero" style="min-height: 70vh; align-items: flex-start; padding-top: 40px;">
+        <div class="container">
+            <div class="prose-card" style="max-width: 560px;">
+
+                <!-- Formulier -->
+                <div id="aanvraag-form-wrap">
+                    <h1 id="aanvraag-title" class="hero-title" style="font-size: 1.8rem; margin-bottom: 14px;">
+                        Leuk dat je met LeadMaat aan de slag wilt! 🎉
+                    </h1>
+                    <p id="aanvraag-intro" style="margin-bottom: 28px; line-height: 1.7;">
+                        Laat hieronder je e-mailadres en website achter, dan help ik je persoonlijk verder.
+                    </p>
+
+                    <form class="contact-form" id="aanvraagForm" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Web3Forms configuratie -->
+                        <input type="hidden" name="access_key" value="76979a1d-c55f-4f38-ba4b-3de4a394c510">
+                        <input type="hidden" name="subject" id="aanvraag-subject" value="LeadMaat-aanvraag">
+                        <input type="hidden" name="from_name" value="NordicFix - LeadMaat aanvraag">
+                        <input type="hidden" name="pakket" id="aanvraag-pakket" value="Niet gespecificeerd">
+                        <input type="hidden" name="redirect" value="https://nordicfix.nl/bedankt.html">
+                        <!-- Spam-bescherming (honeypot) -->
+                        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+                        <div class="form-group">
+                            <label for="name">Naam</label>
+                            <input type="text" id="name" name="name" placeholder="Jouw naam (optioneel)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-mailadres *</label>
+                            <input type="email" id="email" name="email" required placeholder="jouw@email.nl" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="website">Website *</label>
+                            <input type="text" id="website" name="website" required placeholder="www.jouwwebsite.nl" />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" id="aanvraag-submit" style="margin-top: 8px;">
+                            Versturen
+                        </button>
+                        <p id="aanvraag-error" style="display:none; color:#f3a05a; margin-top:16px;">
+                            Er ging iets mis. Probeer het nog eens, of mail me direct via de contactpagina.
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Bedankt (na versturen) -->
+                <div id="aanvraag-thanks" style="display:none; text-align:center;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">🙌</div>
+                    <h1 class="hero-title" style="font-size: 1.8rem; margin-bottom: 14px;">Gelukt!</h1>
+                    <p style="line-height: 1.7; margin-bottom: 8px;">
+                        Ik help je persoonlijk verder. Je hoort spoedig van me.
+                    </p>
+                    <p style="line-height: 1.7; opacity: 0.85;">
+                        Houd je mailbox in de gaten (ook de spam, voor de zekerheid).
+                    </p>
+                    <div style="margin-top: 24px;">
+                        <a href="/leadmaat/" class="btn btn-secondary">Terug naar LeadMaat</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none;">
+                <p>&copy; 2020 - <span class="current-year">2026</span> NordicFix.</p>
+                <div class="footer-legal">
+                    <a href="/privacy-policy/">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="/algemene-voorwaarden/">Algemene Voorwaarden</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var pakket = params.get('pakket');
+
+            var content = {
+                plugin: {
+                    title: 'Je wilt LeadMaat zelf installeren. Goede keuze! 🎉',
+                    intro: 'Laat hieronder je e-mailadres en website achter. Dan stuur ik je de plugin met een duidelijke handleiding en help ik je persoonlijk op weg.',
+                    subject: 'LeadMaat-aanvraag — Alleen de plugin (€89)',
+                    label: 'Alleen de plugin (€89)'
+                },
+                installatie: {
+                    title: 'Je wilt LeadMaat laten installeren. Goede keuze! 🎉',
+                    intro: 'Laat hieronder je e-mailadres en website achter. Dan neem ik persoonlijk contact op om LeadMaat helemaal voor je in te stellen.',
+                    subject: 'LeadMaat-aanvraag — Plugin en installatie (€179)',
+                    label: 'Plugin en installatie (€179)'
+                }
+            };
+            var def = {
+                title: 'Leuk dat je met LeadMaat aan de slag wilt! 🎉',
+                intro: 'Laat hieronder je e-mailadres en website achter, dan help ik je persoonlijk verder.',
+                subject: 'LeadMaat-aanvraag',
+                label: 'Niet gespecificeerd'
+            };
+            var cfg = content[pakket] || def;
+
+            document.getElementById('aanvraag-title').textContent = cfg.title;
+            document.getElementById('aanvraag-intro').textContent = cfg.intro;
+            document.getElementById('aanvraag-subject').value = cfg.subject;
+            document.getElementById('aanvraag-pakket').value = cfg.label;
+
+            var form = document.getElementById('aanvraagForm');
+            var submitBtn = document.getElementById('aanvraag-submit');
+            var errorMsg = document.getElementById('aanvraag-error');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                errorMsg.style.display = 'none';
+                submitBtn.disabled = true;
+                var original = submitBtn.textContent;
+                submitBtn.textContent = 'Versturen…';
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: new FormData(form)
+                })
+                    .then(function (res) { return res.json(); })
+                    .then(function (json) {
+                        if (json.success) {
+                            document.getElementById('aanvraag-form-wrap').style.display = 'none';
+                            document.getElementById('aanvraag-thanks').style.display = 'block';
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        } else {
+                            throw new Error('mislukt');
+                        }
+                    })
+                    .catch(function () {
+                        errorMsg.style.display = 'block';
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = original;
+                    });
+            });
+        })();
+    </script>
+</body>
+
+</html>
