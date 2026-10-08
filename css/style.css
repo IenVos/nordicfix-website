@@ -179,9 +179,27 @@ Navigation
 
 .nav-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 25px 0;
+}
+
+/* Klikbaar logo in de header (links), terug naar home */
+.nav-logo {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.nav-logo img {
+    height: 52px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover img {
+    transform: scale(1.05);
 }
 
 .nav-links {
@@ -289,24 +307,6 @@ Hero Section
         0 0 0 5px rgba(220, 235, 250, 0.60),   /* dunne lichte rand erbuiten */
         0 0 30px rgba(150, 195, 235, 0.45),    /* zachte maan-gloed */
         0 14px 40px rgba(0, 0, 0, 0.50);       /* diepte */
-}
-
-/* Klein hoeklogo op subpagina's (niet home/over):
-   ~1/7 van het grote logo (500px -> ~72px), linksboven in de hero.
-   Horizontaal uitgelijnd op de content-rand (zelfde als .container). */
-.hero-logo.hero-logo--corner {
-    position: absolute;
-    top: 20px;
-    left: max(20px, calc((100% - var(--container-width)) / 2 + 20px));
-    margin-bottom: 0;
-    z-index: 3;
-}
-
-.hero-logo.hero-logo--corner img {
-    width: 72px !important;
-    max-width: 72px !important;
-    height: auto !important;
-    margin-bottom: 0 !important;
 }
 
 .hero-title {
