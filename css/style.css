@@ -403,6 +403,13 @@ Buttons
     /* Hier stond de fout */
 }
 
+/* Kleine, gewone knop (bijv. hero-CTA) - niet full-width, ook op mobiel */
+.btn-small {
+    padding: 10px 24px;
+    font-size: 14px;
+    width: auto !important;
+}
+
 .btn-compact {
     display: inline-block;
     padding: 10px 24px;
