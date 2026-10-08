@@ -1875,8 +1875,10 @@ grid-template-columns: 1fr;
     flex-direction: column;
 }
 
+/* Knoppen zijn zo breed als hun inhoud (net iets groter dan de tekst),
+   niet meer full-width over de hele breedte. */
 .btn {
-    width: 100%;
+    width: auto;
     text-align: center;
 }
 /* De knop in de review kaart */
