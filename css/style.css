@@ -460,6 +460,31 @@ p, li, .hero-subtitle {
     text-wrap: pretty;
 }
 
+/* Tekstkader: links uitgelijnde tekst in een subtiel kader
+   (zelfde look als de kaarten) i.p.v. gecentreerde tekst. */
+.prose-card {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1.12rem;
+    background: rgba(30, 58, 79, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(110, 181, 209, 0.2);
+    border-radius: 16px;
+    padding: 34px 40px;
+}
+
+.prose-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Alleen-logo navigatie op landingspagina's (tools): menu + hamburger verbergen */
+.main-nav.nav-logo-only .nav-links,
+.main-nav.nav-logo-only .mobile-menu-toggle {
+    display: none !important;
+}
+
 /* ====================================
 Services Grid
 ==================================== */
