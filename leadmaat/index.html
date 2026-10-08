@@ -142,151 +142,204 @@
         </div>
     </section>
 
-    <!-- Zie het in actie (animatie-demo) -->
+    <!-- Zie het in actie (wisselende merk-demo) -->
     <section class="services-overview" style="padding-top: 60px;">
         <div class="container">
             <h2 class="section-title">Zie het in actie</h2>
-            <p style="text-align: center; max-width: 620px; margin: 0 auto 40px; line-height: 1.7; opacity: 0.9;">
-                Zo ziet het eruit voor je bezoeker: in een paar seconden van een vraag naar een persoonlijke mail.
+            <p style="text-align: center; max-width: 660px; margin: 0 auto 40px; line-height: 1.7; opacity: 0.9;">
+                Eén plugin, volledig in jouw merk: kleuren, lettertype, vragen en toon. Hieronder draaien twee echte
+                voorbeelden door precies dezelfde tool.
             </p>
 
             <style>
-                .lmd-wrap { max-width: 540px; margin: 0 auto; }
-                .lmd-frame {
-                    background: rgba(20, 34, 49, 0.88);
-                    border: 1px solid rgba(110, 181, 209, 0.2);
-                    border-radius: 18px;
-                    overflow: hidden;
-                    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
-                    backdrop-filter: blur(10px);
-                }
-                .lmd-bar { display: flex; align-items: center; gap: 7px; padding: 13px 16px; background: rgba(12, 22, 32, 0.7); border-bottom: 1px solid rgba(110, 181, 209, 0.12); }
-                .lmd-bar i { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
-                .lmd-url { margin-left: 12px; font-size: 12px; color: rgba(255, 255, 255, 0.45); font-family: 'Space Mono', monospace; }
-                .lmd-screen { position: relative; padding: 30px 28px; min-height: 270px; }
-                .lmd-state { position: absolute; inset: 30px 28px; opacity: 0; transform: translateY(12px); transition: opacity .45s ease, transform .45s ease; pointer-events: none; }
-                .lmd-state.on { opacity: 1; transform: none; }
-                .lmd-tag { display: inline-block; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--color-secondary); font-weight: 700; margin-bottom: 14px; }
-                .lmd-q { font-size: 1.25rem; font-weight: 700; color: #fff; line-height: 1.35; margin-bottom: 18px; }
-                .lmd-field { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(110, 181, 209, 0.25); border-radius: 10px; padding: 14px 16px; min-height: 54px; color: #eaf2f8; font-size: 1rem; line-height: 1.5; }
-                .lmd-field.email { font-family: 'Space Mono', monospace; }
-                .lmd-caret { display: inline-block; width: 2px; height: 1.05em; background: var(--color-accent); margin-left: 2px; vertical-align: -2px; animation: lmd-blink 1s steps(1) infinite; }
+                .lmd2-wrap { max-width: 600px; margin: 0 auto; }
+                .lmd2-stage { position: relative; height: 470px; transition: height .5s ease; }
+                .lmd2-scene { position: absolute; inset: 0; opacity: 0; transform: translateY(14px); transition: opacity .55s ease, transform .55s ease; pointer-events: none; }
+                .lmd2-scene.on { opacity: 1; transform: none; }
+                .lmd2-plugin { border-radius: 20px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,.45); }
+                .lmd2-top { display: flex; align-items: center; gap: 12px; padding: 15px 18px; }
+                .lmd2-logo { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; flex-shrink: 0; }
+                .lmd2-brand { font-weight: 700; font-size: 15px; }
+                .lmd2-steps { margin-left: auto; display: flex; gap: 9px; font-size: 12px; opacity: .6; }
+                .lmd2-steps b { opacity: 1; font-weight: 700; }
+                .lmd2-card { margin: 0 16px 14px; border-radius: 16px; padding: 24px 22px; }
+                .lmd2-kicker { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+                .lmd2-h { font-size: 1.2rem; font-weight: 700; line-height: 1.32; margin-bottom: 8px; }
+                .lmd2-sub { font-size: .88rem; opacity: .7; margin-bottom: 16px; line-height: 1.5; }
+                .lmd2-choice { display: flex; align-items: center; gap: 12px; background: #fff; color: #39393a; border-radius: 10px; padding: 12px 15px; margin-bottom: 9px; font-size: .92rem; }
+                .lmd2-box { width: 18px; height: 18px; border-radius: 5px; border: 2px solid currentColor; flex-shrink: 0; position: relative; opacity: .45; transition: all .25s ease; }
+                .lmd2-choice.checked .lmd2-box { opacity: 1; background: currentColor; }
+                .lmd2-choice.checked .lmd2-box::after { content: '\2713'; position: absolute; inset: -4px 0 0; width: 100%; color: #fff; font-size: 13px; text-align: center; line-height: 18px; }
+                .lmd2-answer, .lmd2-input { background: #fff; color: #2b2b2b; border-radius: 10px; padding: 15px 16px; font-size: .92rem; line-height: 1.5; }
+                .lmd2-answer { min-height: 64px; }
+                .lmd2-input { margin-bottom: 12px; }
+                .lmd2-caret2 { display: inline-block; width: 2px; height: 1em; background: currentColor; margin-left: 1px; vertical-align: -2px; animation: lmd-blink 1s steps(1) infinite; }
                 @keyframes lmd-blink { 50% { opacity: 0; } }
-                .lmd-btn { margin-top: 18px; display: inline-block; background: var(--color-accent); color: #fff; font-weight: 700; padding: 12px 26px; border-radius: 10px; transition: transform .15s ease, box-shadow .15s ease; }
-                .lmd-btn.press { transform: scale(.94); box-shadow: 0 0 0 5px rgba(243, 156, 90, 0.25); }
-                .lmd-success { text-align: center; }
-                .lmd-check { width: 58px; height: 58px; border-radius: 50%; background: rgba(0, 191, 165, 0.15); border: 2px solid #00BFA5; color: #00BFA5; font-size: 30px; display: flex; align-items: center; justify-content: center; margin: 4px auto 18px; }
-                .lmd-success h4 { font-size: 1.3rem; color: #fff; margin-bottom: 8px; }
-                .lmd-success p { color: rgba(255, 255, 255, 0.7); line-height: 1.6; }
-                .lmd-mail { display: flex; gap: 14px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(110, 181, 209, 0.2); border-radius: 12px; padding: 16px; }
-                .lmd-ava { width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; background: linear-gradient(135deg, var(--color-secondary), var(--color-accent)); }
-                .lmd-from { font-weight: 700; color: #fff; font-size: .95rem; }
-                .lmd-subj { color: rgba(255, 255, 255, 0.55); font-size: .82rem; margin-top: 2px; }
-                .lmd-mailbody { color: rgba(234, 242, 248, 0.85); font-size: .9rem; line-height: 1.55; margin-top: 10px; }
+                .lmd2-send { display: block; text-align: center; border-radius: 12px; padding: 14px; font-weight: 700; color: #fff; transition: transform .15s ease, filter .15s ease; }
+                .lmd2-send.press { transform: scale(.97); filter: brightness(.9); }
+                .lmd2-foot { display: flex; justify-content: space-between; align-items: center; padding: 2px 20px 15px; font-size: 12px; opacity: .55; }
+                .lmd2-done { text-align: center; padding: 34px 22px; }
+                .lmd2-done .ic { font-size: 40px; margin-bottom: 10px; }
+                .lmd2-badge { text-align: center; margin-top: 22px; font-size: .95rem; opacity: .85; min-height: 1.4em; }
+
+                /* Natural You */
+                .t-ny .lmd2-plugin { background: #f3f1ec; }
+                .t-ny .lmd2-top { color: #3f4a37; }
+                .t-ny .lmd2-logo { background: #5b7a43; color: #fff; }
+                .t-ny .lmd2-card { background: #e7e4dc; color: #3f4a37; font-family: Georgia, 'Times New Roman', serif; }
+                .t-ny .lmd2-kicker, .t-ny .lmd2-steps b, .t-ny .lmd2-box { color: #5b7a43; }
+                .t-ny .lmd2-send { background: #5b7a43; }
+                .t-ny .lmd2-foot { color: #5b7a43; }
+
+                /* Talk To Benji */
+                .t-ttb .lmd2-plugin { background: #eceff3; }
+                .t-ttb .lmd2-top { color: #fff; background: #3a4a63; }
+                .t-ttb .lmd2-logo { background: #fff; color: #3a4a63; }
+                .t-ttb .lmd2-card { background: #fff; color: #2b3340; }
+                .t-ttb .lmd2-kicker, .t-ttb .lmd2-steps b { color: #3a4a63; }
+                .t-ttb .lmd2-send { background: #5b6b8a; }
+                .t-ttb .lmd2-foot { color: #3a4a63; }
             </style>
 
-            <div class="lmd-wrap">
-                <div class="lmd-frame" id="lmd">
-                    <div class="lmd-bar">
-                        <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
-                        <span class="lmd-url">jouwwebsite.nl</span>
-                    </div>
-                    <div class="lmd-screen">
-                        <!-- Vraag -->
-                        <div class="lmd-state" data-s="q">
-                            <span class="lmd-tag">Vraag 1 van 3</span>
-                            <div class="lmd-q">Waar loop je tegenaan op je website?</div>
-                            <div class="lmd-field"><span data-type="answer"></span><span class="lmd-caret"></span></div>
-                        </div>
-                        <!-- E-mail -->
-                        <div class="lmd-state" data-s="email">
-                            <span class="lmd-tag">Bijna klaar</span>
-                            <div class="lmd-q">Waar mag ik mijn persoonlijke reactie naartoe sturen?</div>
-                            <div class="lmd-field email"><span data-type="email"></span><span class="lmd-caret"></span></div>
-                            <span class="lmd-btn" data-btn>Versturen</span>
-                        </div>
-                        <!-- Gelukt -->
-                        <div class="lmd-state lmd-success" data-s="done">
-                            <div class="lmd-check">✓</div>
-                            <h4>Dankjewel!</h4>
-                            <p>Je ontvangt zo een persoonlijk bericht van me.</p>
-                        </div>
-                        <!-- Mail terug -->
-                        <div class="lmd-state" data-s="mail">
-                            <span class="lmd-tag">Nieuwe mail</span>
-                            <div class="lmd-mail">
-                                <div class="lmd-ava">I</div>
-                                <div>
-                                    <div class="lmd-from">Ien — NordicFix</div>
-                                    <div class="lmd-subj">Een idee voor meer aanvragen</div>
-                                    <div class="lmd-mailbody">Hoi Anna, ik zag dat je wél bezoekers krijgt, maar weinig
-                                        aanvragen. Dit zou ik als eerste aanpassen op je site…</div>
-                                </div>
+            <div class="lmd2-wrap">
+                <div class="lmd2-stage">
+
+                    <!-- Scene 1: Natural You (groen, serif, meerkeuze) -->
+                    <div class="lmd2-scene on t-ny" data-scene="ny">
+                        <div class="lmd2-plugin">
+                            <div class="lmd2-top">
+                                <span class="lmd2-logo">NY</span>
+                                <span class="lmd2-brand">Natural You</span>
+                                <span class="lmd2-steps"><span>Welkom</span><b>1</b><span>2</span><span>3</span><span>Bewaar</span></span>
                             </div>
+                            <div class="lmd2-card">
+                                <div class="lmd2-kicker">Vraag 1</div>
+                                <div class="lmd2-h">Wanneer merk je dat je batterij leegloopt?</div>
+                                <div class="lmd2-sub">Kies wat je herkent (meerdere mogelijk).</div>
+                                <div class="lmd2-choice" data-c><span class="lmd2-box"></span>Na een dag met veel mensen of afspraken</div>
+                                <div class="lmd2-choice" data-c><span class="lmd2-box"></span>Als ik veel keuzes moet maken</div>
+                                <div class="lmd2-choice" data-c><span class="lmd2-box"></span>Wanneer anderen veel van me verwachten</div>
+                            </div>
+                            <div class="lmd2-foot"><span>&larr; Vorige</span><span>2 / 8</span><span>Volgende &rarr;</span></div>
                         </div>
                     </div>
+
+                    <!-- Scene 2: Talk To Benji (navy, open antwoord) -->
+                    <div class="lmd2-scene t-ttb" data-scene="ttb">
+                        <div class="lmd2-plugin">
+                            <div class="lmd2-top">
+                                <span class="lmd2-logo">B</span>
+                                <span class="lmd2-brand">Talk To Benji</span>
+                                <span class="lmd2-steps"><span>Welkom</span><b>1</b><span>2</span><span>3</span><span>En nu?</span></span>
+                            </div>
+                            <div class="lmd2-card">
+                                <div class="lmd2-kicker">Moment 1</div>
+                                <div class="lmd2-h">Wat mis je op dit moment het meest?</div>
+                                <div class="lmd2-answer"><span data-ttbtype></span><span class="lmd2-caret2"></span></div>
+                            </div>
+                            <div class="lmd2-foot"><span>&larr; Vorige</span><span>3 / 9</span><span>Volgende &rarr;</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Scene 3: Eindscherm + persoonlijke brief -->
+                    <div class="lmd2-scene t-ny" data-scene="end">
+                        <div class="lmd2-plugin">
+                            <div class="lmd2-top">
+                                <span class="lmd2-logo">NY</span>
+                                <span class="lmd2-brand">Natural You</span>
+                                <span class="lmd2-steps"><span>5</span><span>6</span><b>Bewaar</b></span>
+                            </div>
+                            <div class="lmd2-card" data-endcard>
+                                <div class="lmd2-h">Waar mag ik jouw energiebrief naartoe sturen?</div>
+                                <div class="lmd2-sub">Laat je e-mailadres achter, dan schrijf ik je een persoonlijke energiebrief.</div>
+                                <div class="lmd2-input"><span data-emailtype></span><span class="lmd2-caret2"></span></div>
+                                <div class="lmd2-send" data-sendbtn>Stuur mij mijn energiebrief</div>
+                            </div>
+                            <div class="lmd2-card lmd2-done" data-donecard style="display:none;">
+                                <div class="ic">&#128156;</div>
+                                <div class="lmd2-h">Je persoonlijke brief is onderweg</div>
+                                <div class="lmd2-sub" style="margin-bottom:0;">Geschreven uit jouw eigen antwoorden. Precies in de toon van je merk.</div>
+                            </div>
+                            <div class="lmd2-foot"><span>&larr; Vorige</span><span>8 / 8</span><span></span></div>
+                        </div>
+                    </div>
+
                 </div>
+                <div class="lmd2-badge" id="lmd2-badge">Voorbeeld: Natural You</div>
             </div>
         </div>
     </section>
 
     <script>
         (function () {
-            var root = document.getElementById('lmd');
-            if (!root) return;
-            var states = {};
-            root.querySelectorAll('.lmd-state').forEach(function (el) { states[el.dataset.s] = el; });
-            var answerEl = root.querySelector('[data-type="answer"]');
-            var emailEl = root.querySelector('[data-type="email"]');
-            var btn = root.querySelector('[data-btn]');
+            var stage = document.querySelector('.lmd2-stage');
+            if (!stage) return;
+            var scenes = {
+                ny: document.querySelector('[data-scene="ny"]'),
+                ttb: document.querySelector('[data-scene="ttb"]'),
+                end: document.querySelector('[data-scene="end"]')
+            };
+            var badge = document.getElementById('lmd2-badge');
             var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-            var ANSWER = 'Ik krijg wel bezoekers, maar weinig aanvragen.';
-            var EMAIL = 'anna@bloomstudio.nl';
+            var nyChoices = scenes.ny.querySelectorAll('[data-c]');
+            var ttbType = scenes.ttb.querySelector('[data-ttbtype]');
+            var emailType = scenes.end.querySelector('[data-emailtype]');
+            var sendBtn = scenes.end.querySelector('[data-sendbtn]');
+            var endCard = scenes.end.querySelector('[data-endcard]');
+            var doneCard = scenes.end.querySelector('[data-donecard]');
 
             function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
-            function show(name) {
-                Object.keys(states).forEach(function (k) { states[k].classList.toggle('on', k === name); });
+            function fit(name) { var p = scenes[name].querySelector('.lmd2-plugin'); if (p) stage.style.height = p.offsetHeight + 'px'; }
+            function show(name, label) {
+                Object.keys(scenes).forEach(function (k) { scenes[k].classList.toggle('on', k === name); });
+                fit(name);
+                if (label) badge.textContent = label;
             }
-            async function type(el, text, speed) {
+            async function type(el, text, sp) {
                 el.textContent = '';
                 if (reduce) { el.textContent = text; return; }
-                for (var i = 0; i < text.length; i++) {
-                    el.textContent += text[i];
-                    await sleep(speed);
-                }
+                for (var i = 0; i < text.length; i++) { el.textContent += text[i]; await sleep(sp); }
             }
+
+            fit('ny');
+            window.addEventListener('resize', function () { var on = document.querySelector('.lmd2-scene.on'); if (on) stage.style.height = on.querySelector('.lmd2-plugin').offsetHeight + 'px'; });
 
             async function loop() {
                 while (true) {
-                    // Vraag + antwoord
-                    answerEl.textContent = '';
-                    show('q');
-                    await sleep(700);
-                    await type(answerEl, ANSWER, 38);
-                    await sleep(900);
-                    // E-mail
-                    emailEl.textContent = '';
-                    btn.classList.remove('press');
-                    show('email');
-                    await sleep(600);
-                    await type(emailEl, EMAIL, 55);
-                    await sleep(700);
-                    btn.classList.add('press');
-                    await sleep(260);
-                    btn.classList.remove('press');
-                    await sleep(200);
-                    // Gelukt
-                    show('done');
+                    // Natural You - meerkeuze
+                    nyChoices.forEach(function (c) { c.classList.remove('checked'); });
+                    show('ny', 'Voorbeeld 1: Natural You — groen, serif, meerkeuze');
+                    await sleep(1200);
+                    nyChoices[0].classList.add('checked'); await sleep(650);
+                    nyChoices[2].classList.add('checked'); await sleep(1700);
+                    // Talk To Benji - open antwoord
+                    ttbType.textContent = '';
+                    show('ttb', 'Voorbeeld 2: Talk To Benji — navy, open antwoord');
+                    await sleep(750);
+                    await type(ttbType, 'Haar warmte, en het gevoel dat ze hier bij me is.', 40);
                     await sleep(1600);
-                    // Mail terug
-                    show('mail');
-                    await sleep(3200);
+                    // Eindscherm + brief
+                    endCard.style.display = '';
+                    doneCard.style.display = 'none';
+                    emailType.textContent = '';
+                    sendBtn.classList.remove('press');
+                    show('end', 'Eindscherm: e-mail achterlaten voor de persoonlijke brief');
+                    await sleep(750);
+                    await type(emailType, 'anna@bloomstudio.nl', 55);
+                    await sleep(650);
+                    sendBtn.classList.add('press'); await sleep(280);
+                    sendBtn.classList.remove('press'); await sleep(260);
+                    endCard.style.display = 'none';
+                    doneCard.style.display = '';
+                    fit('end');
+                    badge.textContent = 'En de persoonlijke brief komt binnen — automatisch';
+                    await sleep(3000);
                 }
             }
             loop();
         })();
     </script>
+
 
     <!-- Wat je krijgt / features -->
     <section class="services-overview" style="padding-top: 60px;">
