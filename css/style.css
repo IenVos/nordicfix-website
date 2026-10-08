@@ -291,6 +291,24 @@ Hero Section
         0 14px 40px rgba(0, 0, 0, 0.50);       /* diepte */
 }
 
+/* Klein hoeklogo op subpagina's (niet home/over):
+   ~1/7 van het grote logo (500px -> ~72px), linksboven in de hero.
+   Horizontaal uitgelijnd op de content-rand (zelfde als .container). */
+.hero-logo.hero-logo--corner {
+    position: absolute;
+    top: 20px;
+    left: max(20px, calc((100% - var(--container-width)) / 2 + 20px));
+    margin-bottom: 0;
+    z-index: 3;
+}
+
+.hero-logo.hero-logo--corner img {
+    width: 72px !important;
+    max-width: 72px !important;
+    height: auto !important;
+    margin-bottom: 0 !important;
+}
+
 .hero-title {
     font-size: clamp(48px, 8vw, 88px);
     font-weight: 800;
