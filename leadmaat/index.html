@@ -86,10 +86,10 @@
                     <strong style="color: var(--color-secondary);">Mensen delen niet zomaar meer hun e-mailadres.</strong> Ze verwachten daarna een nieuwsbrief die ze toch niet openen of een reeks algemene mails die niet bij hen passen. Een formulier met ‘Schrijf je in’ laten ze daarom steeds vaker links liggen.
                 </p>
                 <p style="margin-bottom: 20px;">
-                    <strong style="color: var(--color-secondary);">Met LeadMaat pak je het anders aan.</strong> Je begint met een <strong style="color: var(--color-secondary);">paar korte vragen</strong>, bijvoorbeeld over <strong style="color: var(--color-secondary);">iemands situatie of het probleem</strong> waar diegene tegenaan loopt. De bezoeker geeft antwoord in eigen woorden en laat vervolgens zijn e-mailadres achter, omdat duidelijk is dat er een <strong style="color: var(--color-secondary);">persoonlijke reactie volgt</strong>.
+                    <strong style="color: var(--color-secondary);">Met LeadMaat pak je het anders aan.</strong> Je begint met een <strong style="color: var(--color-secondary);">paar korte vragen</strong>, bijvoorbeeld <strong style="color: var(--color-secondary);">over iemands situatie of het probleem</strong> waar diegene tegenaan loopt. De bezoeker geeft antwoord in eigen woorden en laat vervolgens zijn e-mailadres achter, omdat duidelijk is dat er een <strong style="color: var(--color-secondary);">persoonlijke reactie volgt</strong>.
                 </p>
                 <p style="margin-bottom: 20px;">
-                    Je verzamelt zo dus niet alleen een adres, maar <strong style="color: var(--color-secondary);">ontdekt ook waar iemand mee zit</strong>. Daardoor kun je in je <strong style="color: var(--color-secondary);">eerste mail meteen op die situatie inspelen</strong>.
+                    Je verzamelt zo dus niet alleen een adres, maar <strong style="color: var(--color-secondary);">ontdekt ook waar iemand mee zit</strong>. <strong style="color: var(--color-secondary);">Daardoor kun je in je eerste mail meteen op die situatie inspelen.</strong>
                 </p>
                 <p>
                     Ik gebruik het zelf en zie dat het resultaat oplevert. Mensen beantwoorden de vragen daadwerkelijk, vaak uitgebreider dan verwacht. En omdat de eerste mail over hun situatie gaat, ontvang ik ook vaker een reactie.
@@ -97,6 +97,199 @@
             </div>
         </div>
     </section>
+
+    <!-- Zie het in actie (twee merken naast elkaar) -->
+    <section class="services-overview" style="padding-top: 60px;">
+        <div class="container">
+            <h2 class="section-title">Zie het in actie</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 44px; line-height: 1.7; opacity: 0.9;">
+                Twee echte voorbeelden, allebei door precies dezelfde plugin. Links een wellnesscoach, rechts een
+                rouwplatform. Zelfde tool, volledig in hun eigen merk, kleuren, vragen en toon.
+            </p>
+
+            <style>
+                .lmd3-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; max-width: 940px; margin: 0 auto; }
+                @media (max-width: 840px) { .lmd3-grid { grid-template-columns: 1fr; max-width: 460px; } }
+                .lmd3-plugin { border-radius: 18px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,.42); }
+                .lmd3-head { display: flex; align-items: center; gap: 10px; padding: 14px 16px; }
+                .lmd3-logo { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px; flex-shrink: 0; }
+                .lmd3-brand { font-weight: 700; font-size: 14px; }
+                .lmd3-steps { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding: 2px 16px 12px; font-size: 12px; }
+                .lmd3-step { height: 24px; min-width: 24px; display: flex; align-items: center; justify-content: center; border-radius: 50%; opacity: .5; flex-shrink: 0; }
+                .lmd3-step.word { border-radius: 11px; padding: 0 9px; }
+                .lmd3-step.active { opacity: 1; color: #fff !important; font-weight: 700; }
+                .lmd3-inner { margin: 0 14px 10px; border-radius: 14px; padding: 20px 18px; min-height: 236px; transition: opacity .4s ease; }
+                .lmd3-kicker { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; opacity: .75; min-height: 13px; }
+                .lmd3-q { font-size: 1.04rem; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+                .lmd3-sub { font-size: .8rem; opacity: .7; margin-bottom: 14px; line-height: 1.4; min-height: 11px; }
+                .lmd3-choice { display: flex; align-items: center; gap: 10px; background: #fff; color: #39393a; border-radius: 9px; padding: 11px 13px; margin-bottom: 8px; font-size: .85rem; }
+                .lmd3-cbox { width: 16px; height: 16px; border-radius: 4px; border: 2px solid currentColor; flex-shrink: 0; position: relative; opacity: .45; transition: all .25s ease; }
+                .lmd3-choice.on .lmd3-cbox { opacity: 1; background: currentColor; }
+                .lmd3-choice.on .lmd3-cbox::after { content: '\2713'; position: absolute; inset: 0; width: 100%; color: #fff; font-size: 11px; text-align: center; line-height: 16px; }
+                .lmd3-answer { background: #fff; color: #2b2b2b; border-radius: 9px; padding: 13px 14px; min-height: 58px; font-size: .86rem; line-height: 1.5; }
+                .lmd3-caret { display: inline-block; width: 2px; height: 1em; background: currentColor; margin-left: 1px; vertical-align: -2px; animation: lmd-blink 1s steps(1) infinite; }
+                @keyframes lmd-blink { 50% { opacity: 0; } }
+                .lmd3-input { background: #fff; color: #2b2b2b; border-radius: 9px; padding: 12px 14px; font-size: .86rem; margin-bottom: 10px; }
+                .lmd3-send { display: block; text-align: center; border-radius: 10px; padding: 12px; font-weight: 700; color: #fff; font-size: .88rem; transition: transform .15s ease, filter .15s ease; }
+                .lmd3-send.press { transform: scale(.97); filter: brightness(.9); }
+                .lmd3-done { text-align: center; padding: 14px 0; }
+                .lmd3-done .ic { font-size: 34px; margin-bottom: 10px; }
+                .lmd3-foot { display: flex; justify-content: space-between; padding: 2px 18px 10px; font-size: 11px; opacity: .55; }
+                .lmd3-pw { text-align: center; font-size: 10px; opacity: .4; padding-bottom: 12px; letter-spacing: .03em; }
+                .lmd3-cap { text-align: center; margin-top: 16px; font-size: .92rem; opacity: .85; }
+
+                /* Natural You */
+                .t-ny { background: #fff; font-family: Georgia, 'Times New Roman', serif; }
+                .t-ny .lmd3-head { color: #3f4a37; }
+                .t-ny .lmd3-logo { background: #5b7a43; color: #fff; }
+                .t-ny .lmd3-steps { color: #8a9580; }
+                .t-ny .lmd3-step.active { background: #5b7a43; }
+                .t-ny .lmd3-inner { background: #ece9e3; color: #3f4a37; }
+                .t-ny .lmd3-cbox { color: #5b7a43; }
+                .t-ny .lmd3-send { background: #5b7a43; }
+                .t-ny .lmd3-foot { color: #5b7a43; }
+
+                /* Talk To Benji */
+                .t-ttb { background: #fff; }
+                .t-ttb .lmd3-head { background: #3a4a63; color: #fff; }
+                .t-ttb .lmd3-logo { background: #fff; color: #3a4a63; }
+                .t-ttb .lmd3-steps { color: #8793a6; padding-top: 12px; }
+                .t-ttb .lmd3-step.active { background: #3a4a63; }
+                .t-ttb .lmd3-inner { background: #f4f6f9; color: #2b3340; }
+                .t-ttb .lmd3-send { background: #5b6b8a; }
+                .t-ttb .lmd3-foot { color: #3a4a63; }
+            </style>
+
+            <div class="lmd3-grid">
+                <div>
+                    <div class="lmd3-plugin t-ny" data-card="ny">
+                        <div class="lmd3-head"><span class="lmd3-logo">NY</span><span class="lmd3-brand">Natural You</span></div>
+                        <div class="lmd3-steps" data-steps></div>
+                        <div class="lmd3-inner">
+                            <div class="lmd3-kicker" data-kicker></div>
+                            <div class="lmd3-q" data-q></div>
+                            <div class="lmd3-sub" data-sub></div>
+                            <div data-body></div>
+                        </div>
+                        <div class="lmd3-foot"><span>&larr; Vorige</span><span data-count></span><span>Volgende &rarr;</span></div>
+                        <div class="lmd3-pw">Powered by NordicFix</div>
+                    </div>
+                    <div class="lmd3-cap">Natural You &mdash; wellnesscoach</div>
+                </div>
+                <div>
+                    <div class="lmd3-plugin t-ttb" data-card="ttb">
+                        <div class="lmd3-head"><span class="lmd3-logo">B</span><span class="lmd3-brand">Talk To Benji</span></div>
+                        <div class="lmd3-steps" data-steps></div>
+                        <div class="lmd3-inner">
+                            <div class="lmd3-kicker" data-kicker></div>
+                            <div class="lmd3-q" data-q></div>
+                            <div class="lmd3-sub" data-sub></div>
+                            <div data-body></div>
+                        </div>
+                        <div class="lmd3-foot"><span>&larr; Vorige</span><span data-count></span><span>Volgende &rarr;</span></div>
+                        <div class="lmd3-pw">Powered by NordicFix</div>
+                    </div>
+                    <div class="lmd3-cap">Talk To Benji &mdash; rouw &amp; gemis</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
+            function runCard(card, cfg) {
+                if (!card) return;
+                var stepsEl = card.querySelector('[data-steps]');
+                var inner = card.querySelector('.lmd3-inner');
+                var kicker = card.querySelector('[data-kicker]');
+                var qEl = card.querySelector('[data-q]');
+                var subEl = card.querySelector('[data-sub]');
+                var bodyEl = card.querySelector('[data-body]');
+                var countEl = card.querySelector('[data-count]');
+
+                function renderSteps(activeIdx) {
+                    stepsEl.innerHTML = cfg.steps.map(function (s, i) {
+                        var word = isNaN(parseInt(s, 10)) ? ' word' : '';
+                        var act = i === activeIdx ? ' active' : '';
+                        return '<span class="lmd3-step' + word + act + '">' + s + '</span>';
+                    }).join('');
+                }
+                async function typeInto(text, sp) {
+                    var span = bodyEl.querySelector('[data-typed]');
+                    span.textContent = '';
+                    if (reduce) { span.textContent = text; return; }
+                    for (var i = 0; i < text.length; i++) { span.textContent += text[i]; await sleep(sp); }
+                }
+
+                async function loop() {
+                    while (true) {
+                        for (var si = 0; si < cfg.scenes.length; si++) {
+                            var sc = cfg.scenes[si];
+                            inner.style.opacity = '0';
+                            await sleep(reduce ? 0 : 320);
+                            renderSteps(sc.stepIdx);
+                            kicker.textContent = sc.kicker || '';
+                            qEl.textContent = sc.q || '';
+                            subEl.textContent = sc.sub || '';
+                            countEl.textContent = sc.count || '';
+                            if (sc.type === 'choice') {
+                                bodyEl.innerHTML = sc.options.map(function (o) { return '<div class="lmd3-choice"><span class="lmd3-cbox"></span>' + o + '</div>'; }).join('');
+                            } else if (sc.type === 'text') {
+                                bodyEl.innerHTML = '<div class="lmd3-answer"><span data-typed></span><span class="lmd3-caret"></span></div>';
+                            } else if (sc.type === 'email') {
+                                bodyEl.innerHTML = '<div class="lmd3-input"><span data-typed></span><span class="lmd3-caret"></span></div><div class="lmd3-send">' + sc.btn + '</div>';
+                            }
+                            inner.style.opacity = '1';
+                            await sleep(reduce ? 0 : 400);
+
+                            if (sc.type === 'choice') {
+                                await sleep(1300);
+                                var rows = bodyEl.querySelectorAll('.lmd3-choice');
+                                for (var c = 0; c < sc.check.length; c++) { if (rows[sc.check[c]]) rows[sc.check[c]].classList.add('on'); await sleep(700); }
+                                await sleep(1700);
+                            } else if (sc.type === 'text') {
+                                await sleep(600);
+                                await typeInto(sc.answer, 42);
+                                await sleep(1800);
+                            } else if (sc.type === 'email') {
+                                await sleep(500);
+                                await typeInto(sc.email, 52);
+                                await sleep(550);
+                                var btn = bodyEl.querySelector('.lmd3-send');
+                                btn.classList.add('press'); await sleep(280); btn.classList.remove('press'); await sleep(260);
+                                kicker.textContent = ''; qEl.textContent = ''; subEl.textContent = '';
+                                bodyEl.innerHTML = '<div class="lmd3-done"><div class="ic">💌</div><div class="lmd3-q" style="margin-bottom:4px;">' + sc.doneTitle + '</div><div class="lmd3-sub" style="margin-bottom:0; min-height:0;">' + sc.doneSub + '</div></div>';
+                                await sleep(2800);
+                            }
+                        }
+                    }
+                }
+                loop();
+            }
+
+            runCard(document.querySelector('[data-card="ny"]'), {
+                steps: ['Welkom', '1', '2', '3', 'Bewaar'],
+                scenes: [
+                    { type: 'choice', stepIdx: 1, kicker: 'Vraag 1', q: 'Wanneer merk je dat je batterij leegloopt?', sub: 'Kies wat je herkent (meerdere mogelijk).', count: '2 / 8', options: ['Na een dag met veel mensen', 'Als ik veel keuzes moet maken', 'Wanneer anderen veel verwachten'], check: [0, 2] },
+                    { type: 'choice', stepIdx: 2, kicker: 'Vraag 2', q: 'Wanneer voel je je juist opgeladen?', sub: 'Kies wat je herkent (meerdere mogelijk).', count: '3 / 8', options: ['Als ik even alleen ben', 'Als ik beweeg of buiten ben', 'Als ik iets maak waar ik plezier in heb'], check: [0, 1] },
+                    { type: 'email', stepIdx: 4, kicker: '', q: 'Waar mag ik jouw energiebrief naartoe sturen?', sub: 'Laat je e-mailadres achter voor je persoonlijke energiebrief.', count: '8 / 8', email: 'anna@bloomstudio.nl', btn: 'Stuur mij mijn energiebrief', doneTitle: 'Je energiebrief is onderweg', doneSub: 'Geschreven uit jouw eigen antwoorden.' }
+                ]
+            });
+
+            runCard(document.querySelector('[data-card="ttb"]'), {
+                steps: ['Welkom', '1', '2', '3', 'Bewaar'],
+                scenes: [
+                    { type: 'text', stepIdx: 1, kicker: 'Moment 1', q: 'Wat mis je op dit moment het meest?', sub: '', count: '3 / 9', answer: 'Haar warmte, en het gevoel dat ze hier bij me is.' },
+                    { type: 'text', stepIdx: 2, kicker: 'Moment 2', q: 'Welke herinnering komt nu naar boven?', sub: '', count: '4 / 9', answer: 'Samen wandelen in de bossen, genieten van de kleuren.' },
+                    { type: 'email', stepIdx: 4, kicker: '', q: 'Je woorden, terug naar jou', sub: 'Laat je e-mailadres achter, dan sturen we je persoonlijke brief.', count: '8 / 9', email: 'hans@gmail.com', btn: 'Stuur mij mijn brief', doneTitle: 'Je brief is onderweg', doneSub: 'Een persoonlijke brief, uit jouw eigen woorden.' }
+                ]
+            });
+        })();
+    </script>
+
 
     <!-- Waarom ik het maakte -->
     <section class="services-overview" style="padding-top: 60px;">
@@ -141,205 +334,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Zie het in actie (wisselende merk-demo) -->
-    <section class="services-overview" style="padding-top: 60px;">
-        <div class="container">
-            <h2 class="section-title">Zie het in actie</h2>
-            <p style="text-align: center; max-width: 660px; margin: 0 auto 40px; line-height: 1.7; opacity: 0.9;">
-                Eén plugin, volledig in jouw merk: kleuren, lettertype, vragen en toon. Hieronder draaien twee echte
-                voorbeelden door precies dezelfde tool.
-            </p>
-
-            <style>
-                .lmd2-wrap { max-width: 600px; margin: 0 auto; }
-                .lmd2-stage { position: relative; height: 470px; transition: height .5s ease; }
-                .lmd2-scene { position: absolute; inset: 0; opacity: 0; transform: translateY(14px); transition: opacity .55s ease, transform .55s ease; pointer-events: none; }
-                .lmd2-scene.on { opacity: 1; transform: none; }
-                .lmd2-plugin { border-radius: 20px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,.45); }
-                .lmd2-top { display: flex; align-items: center; gap: 12px; padding: 15px 18px; }
-                .lmd2-logo { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; flex-shrink: 0; }
-                .lmd2-brand { font-weight: 700; font-size: 15px; }
-                .lmd2-steps { margin-left: auto; display: flex; gap: 9px; font-size: 12px; opacity: .6; }
-                .lmd2-steps b { opacity: 1; font-weight: 700; }
-                .lmd2-card { margin: 0 16px 14px; border-radius: 16px; padding: 24px 22px; }
-                .lmd2-kicker { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
-                .lmd2-h { font-size: 1.2rem; font-weight: 700; line-height: 1.32; margin-bottom: 8px; }
-                .lmd2-sub { font-size: .88rem; opacity: .7; margin-bottom: 16px; line-height: 1.5; }
-                .lmd2-choice { display: flex; align-items: center; gap: 12px; background: #fff; color: #39393a; border-radius: 10px; padding: 12px 15px; margin-bottom: 9px; font-size: .92rem; }
-                .lmd2-box { width: 18px; height: 18px; border-radius: 5px; border: 2px solid currentColor; flex-shrink: 0; position: relative; opacity: .45; transition: all .25s ease; }
-                .lmd2-choice.checked .lmd2-box { opacity: 1; background: currentColor; }
-                .lmd2-choice.checked .lmd2-box::after { content: '\2713'; position: absolute; inset: -4px 0 0; width: 100%; color: #fff; font-size: 13px; text-align: center; line-height: 18px; }
-                .lmd2-answer, .lmd2-input { background: #fff; color: #2b2b2b; border-radius: 10px; padding: 15px 16px; font-size: .92rem; line-height: 1.5; }
-                .lmd2-answer { min-height: 64px; }
-                .lmd2-input { margin-bottom: 12px; }
-                .lmd2-caret2 { display: inline-block; width: 2px; height: 1em; background: currentColor; margin-left: 1px; vertical-align: -2px; animation: lmd-blink 1s steps(1) infinite; }
-                @keyframes lmd-blink { 50% { opacity: 0; } }
-                .lmd2-send { display: block; text-align: center; border-radius: 12px; padding: 14px; font-weight: 700; color: #fff; transition: transform .15s ease, filter .15s ease; }
-                .lmd2-send.press { transform: scale(.97); filter: brightness(.9); }
-                .lmd2-foot { display: flex; justify-content: space-between; align-items: center; padding: 2px 20px 15px; font-size: 12px; opacity: .55; }
-                .lmd2-done { text-align: center; padding: 34px 22px; }
-                .lmd2-done .ic { font-size: 40px; margin-bottom: 10px; }
-                .lmd2-badge { text-align: center; margin-top: 22px; font-size: .95rem; opacity: .85; min-height: 1.4em; }
-
-                /* Natural You */
-                .t-ny .lmd2-plugin { background: #f3f1ec; }
-                .t-ny .lmd2-top { color: #3f4a37; }
-                .t-ny .lmd2-logo { background: #5b7a43; color: #fff; }
-                .t-ny .lmd2-card { background: #e7e4dc; color: #3f4a37; font-family: Georgia, 'Times New Roman', serif; }
-                .t-ny .lmd2-kicker, .t-ny .lmd2-steps b, .t-ny .lmd2-box { color: #5b7a43; }
-                .t-ny .lmd2-send { background: #5b7a43; }
-                .t-ny .lmd2-foot { color: #5b7a43; }
-
-                /* Talk To Benji */
-                .t-ttb .lmd2-plugin { background: #eceff3; }
-                .t-ttb .lmd2-top { color: #fff; background: #3a4a63; }
-                .t-ttb .lmd2-logo { background: #fff; color: #3a4a63; }
-                .t-ttb .lmd2-card { background: #fff; color: #2b3340; }
-                .t-ttb .lmd2-kicker, .t-ttb .lmd2-steps b { color: #3a4a63; }
-                .t-ttb .lmd2-send { background: #5b6b8a; }
-                .t-ttb .lmd2-foot { color: #3a4a63; }
-            </style>
-
-            <div class="lmd2-wrap">
-                <div class="lmd2-stage">
-
-                    <!-- Scene 1: Natural You (groen, serif, meerkeuze) -->
-                    <div class="lmd2-scene on t-ny" data-scene="ny">
-                        <div class="lmd2-plugin">
-                            <div class="lmd2-top">
-                                <span class="lmd2-logo">NY</span>
-                                <span class="lmd2-brand">Natural You</span>
-                                <span class="lmd2-steps"><span>Welkom</span><b>1</b><span>2</span><span>3</span><span>Bewaar</span></span>
-                            </div>
-                            <div class="lmd2-card">
-                                <div class="lmd2-kicker">Vraag 1</div>
-                                <div class="lmd2-h">Wanneer merk je dat je batterij leegloopt?</div>
-                                <div class="lmd2-sub">Kies wat je herkent (meerdere mogelijk).</div>
-                                <div class="lmd2-choice" data-c><span class="lmd2-box"></span>Na een dag met veel mensen of afspraken</div>
-                                <div class="lmd2-choice" data-c><span class="lmd2-box"></span>Als ik veel keuzes moet maken</div>
-                                <div class="lmd2-choice" data-c><span class="lmd2-box"></span>Wanneer anderen veel van me verwachten</div>
-                            </div>
-                            <div class="lmd2-foot"><span>&larr; Vorige</span><span>2 / 8</span><span>Volgende &rarr;</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Scene 2: Talk To Benji (navy, open antwoord) -->
-                    <div class="lmd2-scene t-ttb" data-scene="ttb">
-                        <div class="lmd2-plugin">
-                            <div class="lmd2-top">
-                                <span class="lmd2-logo">B</span>
-                                <span class="lmd2-brand">Talk To Benji</span>
-                                <span class="lmd2-steps"><span>Welkom</span><b>1</b><span>2</span><span>3</span><span>En nu?</span></span>
-                            </div>
-                            <div class="lmd2-card">
-                                <div class="lmd2-kicker">Moment 1</div>
-                                <div class="lmd2-h">Wat mis je op dit moment het meest?</div>
-                                <div class="lmd2-answer"><span data-ttbtype></span><span class="lmd2-caret2"></span></div>
-                            </div>
-                            <div class="lmd2-foot"><span>&larr; Vorige</span><span>3 / 9</span><span>Volgende &rarr;</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Scene 3: Eindscherm + persoonlijke brief -->
-                    <div class="lmd2-scene t-ny" data-scene="end">
-                        <div class="lmd2-plugin">
-                            <div class="lmd2-top">
-                                <span class="lmd2-logo">NY</span>
-                                <span class="lmd2-brand">Natural You</span>
-                                <span class="lmd2-steps"><span>5</span><span>6</span><b>Bewaar</b></span>
-                            </div>
-                            <div class="lmd2-card" data-endcard>
-                                <div class="lmd2-h">Waar mag ik jouw energiebrief naartoe sturen?</div>
-                                <div class="lmd2-sub">Laat je e-mailadres achter, dan schrijf ik je een persoonlijke energiebrief.</div>
-                                <div class="lmd2-input"><span data-emailtype></span><span class="lmd2-caret2"></span></div>
-                                <div class="lmd2-send" data-sendbtn>Stuur mij mijn energiebrief</div>
-                            </div>
-                            <div class="lmd2-card lmd2-done" data-donecard style="display:none;">
-                                <div class="ic">&#128156;</div>
-                                <div class="lmd2-h">Je persoonlijke brief is onderweg</div>
-                                <div class="lmd2-sub" style="margin-bottom:0;">Geschreven uit jouw eigen antwoorden. Precies in de toon van je merk.</div>
-                            </div>
-                            <div class="lmd2-foot"><span>&larr; Vorige</span><span>8 / 8</span><span></span></div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="lmd2-badge" id="lmd2-badge">Voorbeeld: Natural You</div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        (function () {
-            var stage = document.querySelector('.lmd2-stage');
-            if (!stage) return;
-            var scenes = {
-                ny: document.querySelector('[data-scene="ny"]'),
-                ttb: document.querySelector('[data-scene="ttb"]'),
-                end: document.querySelector('[data-scene="end"]')
-            };
-            var badge = document.getElementById('lmd2-badge');
-            var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            var nyChoices = scenes.ny.querySelectorAll('[data-c]');
-            var ttbType = scenes.ttb.querySelector('[data-ttbtype]');
-            var emailType = scenes.end.querySelector('[data-emailtype]');
-            var sendBtn = scenes.end.querySelector('[data-sendbtn]');
-            var endCard = scenes.end.querySelector('[data-endcard]');
-            var doneCard = scenes.end.querySelector('[data-donecard]');
-
-            function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
-            function fit(name) { var p = scenes[name].querySelector('.lmd2-plugin'); if (p) stage.style.height = p.offsetHeight + 'px'; }
-            function show(name, label) {
-                Object.keys(scenes).forEach(function (k) { scenes[k].classList.toggle('on', k === name); });
-                fit(name);
-                if (label) badge.textContent = label;
-            }
-            async function type(el, text, sp) {
-                el.textContent = '';
-                if (reduce) { el.textContent = text; return; }
-                for (var i = 0; i < text.length; i++) { el.textContent += text[i]; await sleep(sp); }
-            }
-
-            fit('ny');
-            window.addEventListener('resize', function () { var on = document.querySelector('.lmd2-scene.on'); if (on) stage.style.height = on.querySelector('.lmd2-plugin').offsetHeight + 'px'; });
-
-            async function loop() {
-                while (true) {
-                    // Natural You - meerkeuze
-                    nyChoices.forEach(function (c) { c.classList.remove('checked'); });
-                    show('ny', 'Voorbeeld 1: Natural You — groen, serif, meerkeuze');
-                    await sleep(1200);
-                    nyChoices[0].classList.add('checked'); await sleep(650);
-                    nyChoices[2].classList.add('checked'); await sleep(1700);
-                    // Talk To Benji - open antwoord
-                    ttbType.textContent = '';
-                    show('ttb', 'Voorbeeld 2: Talk To Benji — navy, open antwoord');
-                    await sleep(750);
-                    await type(ttbType, 'Haar warmte, en het gevoel dat ze hier bij me is.', 40);
-                    await sleep(1600);
-                    // Eindscherm + brief
-                    endCard.style.display = '';
-                    doneCard.style.display = 'none';
-                    emailType.textContent = '';
-                    sendBtn.classList.remove('press');
-                    show('end', 'Eindscherm: e-mail achterlaten voor de persoonlijke brief');
-                    await sleep(750);
-                    await type(emailType, 'anna@bloomstudio.nl', 55);
-                    await sleep(650);
-                    sendBtn.classList.add('press'); await sleep(280);
-                    sendBtn.classList.remove('press'); await sleep(260);
-                    endCard.style.display = 'none';
-                    doneCard.style.display = '';
-                    fit('end');
-                    badge.textContent = 'En de persoonlijke brief komt binnen — automatisch';
-                    await sleep(3000);
-                }
-            }
-            loop();
-        })();
-    </script>
-
 
     <!-- Wat je krijgt / features -->
     <section class="services-overview" style="padding-top: 60px;">
