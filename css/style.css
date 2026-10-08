@@ -277,10 +277,9 @@ Navigation
 Hero Section
 ==================================== */
 .hero {
-    min-height: 35vh;
     display: flex;
     align-items: center;
-    padding-top: 20px;
+    padding: 30px 0 40px;
     position: relative;
 }
 
