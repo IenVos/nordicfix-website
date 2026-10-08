@@ -179,13 +179,19 @@ Navigation
 
 .nav-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 25px 0;
+    position: relative;
 }
 
-/* Klikbaar logo in de header (links), terug naar home */
+/* Klikbaar logo in de header (links), terug naar home.
+   Absoluut gepositioneerd zodat het menu netjes in het midden blijft. */
 .nav-logo {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
     display: inline-flex;
     align-items: center;
     flex-shrink: 0;
