@@ -449,6 +449,17 @@ section {
     background-clip: text;
 }
 
+/* Nettere regelafbrekingen: gebalanceerde titels en geen los woord
+   onderaan een alinea (text-wrap; valt netjes terug in oudere browsers). */
+h1, h2, h3, h4,
+.hero-title, .section-title, .cta-content h2 {
+    text-wrap: balance;
+}
+
+p, li, .hero-subtitle {
+    text-wrap: pretty;
+}
+
 /* ====================================
 Services Grid
 ==================================== */
