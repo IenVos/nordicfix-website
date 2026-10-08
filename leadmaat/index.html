@@ -102,9 +102,10 @@
     <section class="services-overview" style="padding-top: 60px;">
         <div class="container">
             <h2 class="section-title">Zie het in actie</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 44px; line-height: 1.7; opacity: 0.9;">
-                Twee echte voorbeelden, allebei door precies dezelfde plugin. Links een voedings- en gezondheidscoach, rechts een
-                rouwplatform. Zelfde tool, volledig in hun eigen merk, kleuren, vragen en toon.
+            <p style="text-align: center; max-width: 720px; margin: 0 auto 44px; line-height: 1.7; opacity: 0.9;">
+                Twee echte voorbeelden, allebei door precies dezelfde plugin. Links een voedings- en gezondheidscoach,
+                rechts een rouwplatform. Je ziet de hele route: een warm welkom, een paar vragen in hun eigen toon, en
+                aan het eind het e-mailadres voor de persoonlijke brief. Zelfde tool, totaal ander merk.
             </p>
 
             <style>
@@ -118,15 +119,21 @@
                 .lmd3-step { height: 24px; min-width: 24px; display: flex; align-items: center; justify-content: center; border-radius: 50%; opacity: .5; flex-shrink: 0; }
                 .lmd3-step.word { border-radius: 11px; padding: 0 9px; }
                 .lmd3-step.active { opacity: 1; color: #fff !important; font-weight: 700; }
-                .lmd3-inner { margin: 0 14px 10px; border-radius: 14px; padding: 20px 18px; min-height: 236px; transition: opacity .4s ease; }
+                .lmd3-inner { margin: 0 14px 10px; border-radius: 14px; padding: 20px 18px; min-height: 250px; transition: opacity .4s ease; }
                 .lmd3-kicker { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; opacity: .75; min-height: 13px; }
                 .lmd3-q { font-size: 1.04rem; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
                 .lmd3-sub { font-size: .8rem; opacity: .7; margin-bottom: 14px; line-height: 1.4; min-height: 11px; }
+                .lmd3-wk p { font-size: .86rem; line-height: 1.55; margin: 0 0 10px; }
+                .lmd3-wk p:last-child { margin-bottom: 0; }
+                .lmd3-guide { border-left: 3px solid currentColor; border-radius: 0 8px 8px 0; padding: 11px 13px; margin-bottom: 14px; }
+                .lmd3-guide .gt { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; margin-bottom: 6px; }
+                .lmd3-guide p { font-size: .8rem; line-height: 1.5; margin: 0 0 6px; }
+                .lmd3-guide p:last-child { margin-bottom: 0; }
                 .lmd3-choice { display: flex; align-items: center; gap: 10px; background: #fff; color: #39393a; border-radius: 9px; padding: 11px 13px; margin-bottom: 8px; font-size: .85rem; }
                 .lmd3-cbox { width: 16px; height: 16px; border-radius: 4px; border: 2px solid currentColor; flex-shrink: 0; position: relative; opacity: .45; transition: all .25s ease; }
                 .lmd3-choice.on .lmd3-cbox { opacity: 1; background: currentColor; }
                 .lmd3-choice.on .lmd3-cbox::after { content: '\2713'; position: absolute; inset: 0; width: 100%; color: #fff; font-size: 11px; text-align: center; line-height: 16px; }
-                .lmd3-answer { background: #fff; color: #2b2b2b; border-radius: 9px; padding: 13px 14px; min-height: 58px; font-size: .86rem; line-height: 1.5; }
+                .lmd3-answer { background: #fff; color: #2b2b2b; border-radius: 9px; padding: 13px 14px; min-height: 52px; font-size: .86rem; line-height: 1.5; }
                 .lmd3-caret { display: inline-block; width: 2px; height: 1em; background: currentColor; margin-left: 1px; vertical-align: -2px; animation: lmd-blink 1s steps(1) infinite; }
                 @keyframes lmd-blink { 50% { opacity: 0; } }
                 .lmd3-input { background: #fff; color: #2b2b2b; border-radius: 9px; padding: 12px 14px; font-size: .86rem; margin-bottom: 10px; }
@@ -145,7 +152,7 @@
                 .t-ny .lmd3-steps { color: #8a9580; }
                 .t-ny .lmd3-step.active { background: #5b7a43; }
                 .t-ny .lmd3-inner { background: #ece9e3; color: #3f4a37; }
-                .t-ny .lmd3-cbox { color: #5b7a43; }
+                .t-ny .lmd3-cbox, .t-ny .lmd3-guide { color: #5b7a43; }
                 .t-ny .lmd3-send { background: #5b7a43; }
                 .t-ny .lmd3-foot { color: #5b7a43; }
 
@@ -156,8 +163,16 @@
                 .t-ttb .lmd3-steps { color: #8793a6; padding-top: 12px; }
                 .t-ttb .lmd3-step.active { background: #3a4a63; }
                 .t-ttb .lmd3-inner { background: #f4f6f9; color: #2b3340; }
+                .t-ttb .lmd3-cbox, .t-ttb .lmd3-guide { color: #3a4a63; }
                 .t-ttb .lmd3-send { background: #5b6b8a; }
                 .t-ttb .lmd3-foot { color: #3a4a63; }
+
+                /* Route-uitleg */
+                .lmd3-route { max-width: 760px; margin: 46px auto 0; }
+                .lmd3-route ul { list-style: none; padding: 0; margin: 0; }
+                .lmd3-route li { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; line-height: 1.6; }
+                .lmd3-route li:last-child { margin-bottom: 0; }
+                .lmd3-route .n { width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; background: var(--color-accent); color: #fff; }
             </style>
 
             <div class="lmd3-grid">
@@ -192,6 +207,19 @@
                     <div class="lmd3-cap">Talk To Benji &mdash; rouw &amp; gemis</div>
                 </div>
             </div>
+
+            <!-- Route van begin tot eind -->
+            <div class="lmd3-route">
+                <div class="prose-card">
+                    <p style="margin-bottom: 20px; font-weight: 600; font-size: 1.05rem;">Van begin tot eind, zo loopt het:</p>
+                    <ul>
+                        <li><span class="n">1</span><span><strong>Welkom.</strong> Je bezoeker wordt warm ontvangen en weet meteen wat hem te wachten staat.</span></li>
+                        <li><span class="n">2</span><span><strong>Een paar vragen.</strong> Open of meerkeuze, in jouw eigen toon. Soms met een korte tip ("wat je nu kunt doen").</span></li>
+                        <li><span class="n">3</span><span><strong>E-mailadres.</strong> Pas aan het eind, als iemand al betrokken is en de brief echt wil ontvangen.</span></li>
+                        <li><span class="n">4</span><span><strong>Persoonlijke brief.</strong> Automatisch opgesteld uit de antwoorden, door jou geschreven of met AI, en verstuurd.</span></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -217,6 +245,10 @@
                         return '<span class="lmd3-step' + word + act + '">' + s + '</span>';
                     }).join('');
                 }
+                function guideHTML(g) {
+                    if (!g) return '';
+                    return '<div class="lmd3-guide"><div class="gt">' + g.title + '</div>' + g.lines.map(function (l) { return '<p>' + l + '</p>'; }).join('') + '</div>';
+                }
                 async function typeInto(text, sp) {
                     var span = bodyEl.querySelector('[data-typed]');
                     span.textContent = '';
@@ -235,17 +267,21 @@
                             qEl.textContent = sc.q || '';
                             subEl.textContent = sc.sub || '';
                             countEl.textContent = sc.count || '';
-                            if (sc.type === 'choice') {
-                                bodyEl.innerHTML = sc.options.map(function (o) { return '<div class="lmd3-choice"><span class="lmd3-cbox"></span>' + o + '</div>'; }).join('');
+                            if (sc.type === 'welkom') {
+                                bodyEl.innerHTML = '<div class="lmd3-wk">' + sc.lines.map(function (l) { return '<p>' + l + '</p>'; }).join('') + '</div>';
+                            } else if (sc.type === 'choice') {
+                                bodyEl.innerHTML = guideHTML(sc.guide) + sc.options.map(function (o) { return '<div class="lmd3-choice"><span class="lmd3-cbox"></span>' + o + '</div>'; }).join('');
                             } else if (sc.type === 'text') {
-                                bodyEl.innerHTML = '<div class="lmd3-answer"><span data-typed></span><span class="lmd3-caret"></span></div>';
+                                bodyEl.innerHTML = guideHTML(sc.guide) + '<div class="lmd3-answer"><span data-typed></span><span class="lmd3-caret"></span></div>';
                             } else if (sc.type === 'email') {
                                 bodyEl.innerHTML = '<div class="lmd3-input"><span data-typed></span><span class="lmd3-caret"></span></div><div class="lmd3-send">' + sc.btn + '</div>';
                             }
                             inner.style.opacity = '1';
                             await sleep(reduce ? 0 : 400);
 
-                            if (sc.type === 'choice') {
+                            if (sc.type === 'welkom') {
+                                await sleep(3400);
+                            } else if (sc.type === 'choice') {
                                 await sleep(1300);
                                 var rows = bodyEl.querySelectorAll('.lmd3-choice');
                                 for (var c = 0; c < sc.check.length; c++) { if (rows[sc.check[c]]) rows[sc.check[c]].classList.add('on'); await sleep(700); }
@@ -262,7 +298,7 @@
                                 btn.classList.add('press'); await sleep(280); btn.classList.remove('press'); await sleep(260);
                                 kicker.textContent = ''; qEl.textContent = ''; subEl.textContent = '';
                                 bodyEl.innerHTML = '<div class="lmd3-done"><div class="ic">💌</div><div class="lmd3-q" style="margin-bottom:4px;">' + sc.doneTitle + '</div><div class="lmd3-sub" style="margin-bottom:0; min-height:0;">' + sc.doneSub + '</div></div>';
-                                await sleep(2800);
+                                await sleep(2900);
                             }
                         }
                     }
@@ -273,6 +309,7 @@
             runCard(document.querySelector('[data-card="ny"]'), {
                 steps: ['Welkom', '1', '2', '3', 'Bewaar'],
                 scenes: [
+                    { type: 'welkom', stepIdx: 0, kicker: 'Welkom', q: 'Welkom, fijn dat je er bent!', count: '1 / 8', lines: ['Met een paar korte vragen sta je stil bij wat jou energie kost en oplaadt.', 'Ik gebruik je antwoorden voor een persoonlijke energiebrief. — Lies'] },
                     { type: 'choice', stepIdx: 1, kicker: 'Vraag 1', q: 'Wanneer merk je dat je batterij leegloopt?', sub: 'Kies wat je herkent (meerdere mogelijk).', count: '2 / 8', options: ['Na een dag met veel mensen', 'Als ik veel keuzes moet maken', 'Wanneer anderen veel verwachten'], check: [0, 2] },
                     { type: 'choice', stepIdx: 2, kicker: 'Vraag 2', q: 'Wanneer voel je je juist opgeladen?', sub: 'Kies wat je herkent (meerdere mogelijk).', count: '3 / 8', options: ['Als ik even alleen ben', 'Als ik beweeg of buiten ben', 'Als ik iets maak waar ik plezier in heb'], check: [0, 1] },
                     { type: 'email', stepIdx: 4, kicker: '', q: 'Waar mag ik jouw energiebrief naartoe sturen?', sub: 'Laat je e-mailadres achter voor je persoonlijke energiebrief.', count: '8 / 8', email: 'anna@bloomstudio.nl', btn: 'Stuur mij mijn energiebrief', doneTitle: 'Je energiebrief is onderweg', doneSub: 'Geschreven uit jouw eigen antwoorden.' }
@@ -282,7 +319,8 @@
             runCard(document.querySelector('[data-card="ttb"]'), {
                 steps: ['Welkom', '1', '2', '3', 'Bewaar'],
                 scenes: [
-                    { type: 'text', stepIdx: 1, kicker: 'Moment 1', q: 'Wat mis je op dit moment het meest?', sub: '', count: '3 / 9', answer: 'Haar warmte, en het gevoel dat ze hier bij me is.' },
+                    { type: 'welkom', stepIdx: 0, kicker: 'Welkom', q: 'Wat goed dat je hier bent', count: '2 / 9', lines: ['Je mist iemand. Dat is een van de zwaarste dingen die er zijn.', 'Aan het einde ontvang je een persoonlijke brief, vanuit wat jij hebt gedeeld.'] },
+                    { type: 'text', stepIdx: 1, kicker: 'Moment 1', q: 'Wat mis je op dit moment het meest?', sub: '', count: '3 / 9', guide: { title: 'Wat je nu kunt doen', lines: ['Leg je hand op je borst. Voel je hartslag.', 'Zeg zachtjes: ik ben hier. Dit mag er zijn.'] }, answer: 'Haar warmte, en het gevoel dat ze hier bij me is.' },
                     { type: 'text', stepIdx: 2, kicker: 'Moment 2', q: 'Welke herinnering komt nu naar boven?', sub: '', count: '4 / 9', answer: 'Samen wandelen in de bossen, genieten van de kleuren.' },
                     { type: 'email', stepIdx: 4, kicker: '', q: 'Je woorden, terug naar jou', sub: 'Laat je e-mailadres achter, dan sturen we je persoonlijke brief.', count: '8 / 9', email: 'hans@gmail.com', btn: 'Stuur mij mijn brief', doneTitle: 'Je brief is onderweg', doneSub: 'Een persoonlijke brief, uit jouw eigen woorden.' }
                 ]
