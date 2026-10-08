@@ -168,11 +168,10 @@
                 .t-ttb .lmd3-foot { color: #3a4a63; }
 
                 /* Route-uitleg */
-                .lmd3-route { max-width: 760px; margin: 46px auto 0; }
-                .lmd3-route ul { list-style: none; padding: 0; margin: 0; }
-                .lmd3-route li { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; line-height: 1.6; }
-                .lmd3-route li:last-child { margin-bottom: 0; }
-                .lmd3-route .n { width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; background: var(--color-accent); color: #fff; }
+                .usp-grid.lmd-steps4 { grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto; }
+                .lmd-steps4 .usp-item { padding: 28px 22px; }
+                @media (max-width: 980px) { .usp-grid.lmd-steps4 { grid-template-columns: repeat(2, 1fr); } }
+                @media (max-width: 560px) { .usp-grid.lmd-steps4 { grid-template-columns: 1fr; } }
             </style>
 
             <div class="lmd3-grid">
@@ -208,16 +207,28 @@
                 </div>
             </div>
 
-            <!-- Route van begin tot eind -->
-            <div class="lmd3-route">
-                <div class="prose-card">
-                    <p style="margin-bottom: 20px; font-weight: 600; font-size: 1.05rem;">Van begin tot eind, zo loopt het:</p>
-                    <ul>
-                        <li><span class="n">1</span><span><strong>Welkom.</strong> Je bezoeker wordt warm ontvangen en weet meteen wat hem te wachten staat.</span></li>
-                        <li><span class="n">2</span><span><strong>Een paar vragen.</strong> Open of meerkeuze, in jouw eigen toon. Soms met een korte tip ("wat je nu kunt doen").</span></li>
-                        <li><span class="n">3</span><span><strong>E-mailadres.</strong> Pas aan het eind, als iemand al betrokken is en de brief echt wil ontvangen.</span></li>
-                        <li><span class="n">4</span><span><strong>Persoonlijke brief.</strong> Automatisch opgesteld uit de antwoorden, door jou geschreven of met AI, en verstuurd.</span></li>
-                    </ul>
+            <!-- Route van begin tot eind (kaarten) -->
+            <p style="text-align: center; font-weight: 600; font-size: 1.15rem; margin: 48px auto 34px; opacity: 0.95;">Van begin tot eind, zo loopt het</p>
+            <div class="usp-grid lmd-steps4">
+                <div class="usp-item">
+                    <span class="usp-number">01</span>
+                    <h3>Welkom</h3>
+                    <p>Je bezoeker wordt warm ontvangen en weet meteen wat hem te wachten staat.</p>
+                </div>
+                <div class="usp-item">
+                    <span class="usp-number">02</span>
+                    <h3>Een paar vragen</h3>
+                    <p>Open of meerkeuze, in jouw eigen toon. Soms met een korte tip ("wat je nu kunt doen").</p>
+                </div>
+                <div class="usp-item">
+                    <span class="usp-number">03</span>
+                    <h3>E-mailadres</h3>
+                    <p>Pas aan het eind, als iemand al betrokken is en de brief echt wil ontvangen.</p>
+                </div>
+                <div class="usp-item">
+                    <span class="usp-number">04</span>
+                    <h3>Persoonlijke brief</h3>
+                    <p>Automatisch opgesteld uit de antwoorden, door jou geschreven of met AI, en verstuurd.</p>
                 </div>
             </div>
         </div>
@@ -340,35 +351,6 @@
                     ook een klant in de voeding- en welzijnshoek het. Toen dacht ik: dit kan voor meer ondernemers
                     werken.
                 </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hoe het werkt (3 stappen) -->
-    <section class="usp-section">
-        <div class="container">
-            <section class="services-overview">
-                <div class="container">
-                    <h2 class="section-title" style="margin-bottom: 50px;">Hoe het werkt</h2>
-                </div>
-            </section>
-            <div class="usp-grid">
-                <div class="usp-item">
-                    <span class="usp-number">01</span>
-                    <h3>Je bezoeker beantwoordt een paar vragen</h3>
-                    <p>Open vragen of meerkeuze, in zijn eigen tempo. Typen of inspreken mag allebei.</p>
-                </div>
-                <div class="usp-item">
-                    <span class="usp-number">02</span>
-                    <h3>Hij laat zijn e-mailadres achter</h3>
-                    <p>De antwoorden komen in je overzicht. Het adres gaat direct naar je e-mailprogramma.</p>
-                </div>
-                <div class="usp-item">
-                    <span class="usp-number">03</span>
-                    <h3>Er gaat een persoonlijke brief terug</h3>
-                    <p>Je schrijft de brief zelf, of laat AI een eerste versie maken op basis van de antwoorden. Jij
-                        kiest of de brief automatisch verstuurd wordt of dat je hem eerst leest.</p>
-                </div>
             </div>
         </div>
     </section>
